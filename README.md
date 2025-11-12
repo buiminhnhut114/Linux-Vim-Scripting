@@ -7,12 +7,15 @@ This repository contains four scripting exercises for Linux users, focusing on R
 ## 📘 1. Generate a list of all `.v` and `.sv` files in **PULPissimo**
 
 ### 🎯 Goal
-- Create a file (for example: `pulpissimo_files.list`) that contains **all** `.v` and `.sv` files inside the PULPissimo project directory.
-- Each line should contain one file path (absolute or relative).
+- Create a file (for example: `pulpissimo_files.list`) that contains **all** `.v` and `.sv` files inside the PULPissimo project directory.  
+- Each line should contain one file path (absolute or relative).  
 - No empty lines, no duplicates.
 
 ### 📄 Expected Output
-- `pulpissimo_files.list`
+pulpissimo_files.list
+
+markdown
+Copy code
 
 ---
 
@@ -133,3 +136,7 @@ Linux_Vim_Scripting/
 🤝 Collaboration
 Developed in collaboration and with support from
 @tedduy.
+
+📜 License
+MIT License
+(Or update according to your project policy.)
