@@ -1,19 +1,18 @@
-# 🐧 **Linux • Vim • Scripting – Assignment**
+# 🐧 Linux • Vim • Scripting – Assignment
 
 ---
 
-## 🧩 **1. Create File List**
+## 1. Create File List
 
-Create a file named **`list`** that contains all `.v` and `.sv` files of the **Pulpissimo** project.
+Create a file named `list` that contains all `.v` and `.sv` files of the **Pulpissimo** project.
 
 ---
 
-## ⚖️ **2. Compare Two File Lists**
+## 2. Compare Two File Lists
 
-Write a script that compares elements in **two list files** and outputs the number of files that are **missing or extra**.
+Write a script that compares elements in two list files and outputs the number of files that are missing or extra.
 
-### 📘 **Example**
-```text
+### Example
 list_1:
 aaa.v
 bbb.v
@@ -22,69 +21,78 @@ ccc.v
 list_2:
 aaa.v
 bbb.v
-🧾 Output
-text
+
+shell
 Copy code
+
+### Output
 list_2 is missing 1 file: ccc.v
-🔄 3. Change Path Script
-Write a script named change_path that replaces a given path in a file with a new one.
+
+yaml
+Copy code
+
+---
+
+## 3. Change Path Script
+
+Write a script named `change_path` that replaces a given path in a file with a new one.  
 (You may use any scripting language.)
 
-📘 Example
-bash
-Copy code
+### Example
 ./change_path.csh file_A home/spi/rtl_src home/spi/rtl_src_new
-➡ Replace all path declarations of
-home/spi/rtl_src
-in file_A with
-home/spi/rtl_src_new.
 
-🧪 4. Regression Run Script
+yaml
+Copy code
+
+Replace all path declarations of `home/spi/rtl_src` in `file_A` with `home/spi/rtl_src_new`.
+
+---
+
+## 4. Regression Run Script
+
 Write a script to run regression tests sequentially from a list and produce:
 
-📄 Individual log files for each testcase
+- Individual log files for each testcase  
+- A summary report of all results  
 
-🧾 A summary report of all results
+### Example
 
-📘 Example
-Input List
-text
-Copy code
+#### Input list
 testlist:
 TC1
 TC2
 TC3
 TC4
 TC5
-Output Files After Running
-text
+
+shell
 Copy code
+
+#### Output files after running
 TC1.log
 TC2.log
 TC3.log
 TC4.log
 TC5.log
 testlist.rpt
-Report Format (testlist.rpt)
-text
+
+shell
 Copy code
+
+#### Report format (testlist.rpt)
 TC1: PASS
 TC2: FAIL
 TC3: PASS
 TC4: NA
 TC5: PASS
 Report directory: <path to TC*.log files>
-✅ PASS / FAIL / NA are determined from each .log file.
-⚠️ NA means the testcase could not be compiled or simulated.
 
-🧭 Notes
-Use any scripting language (bash, csh, python, etc.)
+yaml
+Copy code
 
-Keep the code modular, readable, and well-commented
+PASS / FAIL / NA are determined from each `.log` file.  
+NA means the testcase could not be compiled or simulated.
 
-Follow best practices for Linux shell scripting
+---
 
-Use Vim efficiently to edit, test, and debug your scripts
-
-✨ Supported by
-https://github.com/tedduy
+**Supported by:** [https://github.com/tedduy](https://github.com/tedduy)
