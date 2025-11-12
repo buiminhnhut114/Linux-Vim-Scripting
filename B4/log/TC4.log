@@ -1,0 +1,30 @@
+** Warning: (vlib-34) Library already exists at "/home/minhnhut/Linux_Vim_Scripting/B4/work/work".
+Errors: 0, Warnings: 1
+QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+Start time: 17:28:46 on Nov 11,2025
+vlog -work work -f /home/minhnhut/Linux_Vim_Scripting/B4/sim/rtl.f 
+-- Compiling module apb_slave
+-- Compiling module counter_64bit
+-- Compiling module ctrl_counter
+-- Compiling module register
+-- Compiling module interrupt
+-- Compiling module timer_top
+
+Top level modules:
+	timer_top
+End time: 17:28:46 on Nov 11,2025, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim-64 vlog 2021.2_1 Compiler 2021.05 May 15 2021
+Start time: 17:28:46 on Nov 11,2025
+vlog -work work -f /home/minhnhut/Linux_Vim_Scripting/B4/sim/tb.f 
+-- Compiling module test_bench
+** Error: ../tb/test_bench.v(97): BEGIN - END required around task/function statements
+** Error: ../tb/test_bench.v(180): BEGIN - END required around task/function statements
+** Error: ../tb/test_bench.v(230): BEGIN - END required around task/function statements
+** Error: ../tb/test_bench.v(455): BEGIN - END required around task/function statements
+** Error: ../tb/test_bench.v(557): BEGIN - END required around task/function statements
+** Error: ../tb/test_bench.v(708): BEGIN - END required around task/function statements
+** Error: ../tb/test_bench.v(898): BEGIN - END required around task/function statements
+** Error: ../tb/test_bench.v(918): BEGIN - END required around task/function statements
+End time: 17:28:46 on Nov 11,2025, Elapsed time: 0:00:00
+Errors: 8, Warnings: 0

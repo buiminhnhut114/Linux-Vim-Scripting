@@ -1,0 +1,3 @@
+./src/brandtion.v
+./src/reg_intr.v
+./src/up_scaling.v

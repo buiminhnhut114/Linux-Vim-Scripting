@@ -1,0 +1,266 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f MIXED_VERSIONS
+!s12c _opt
+R0
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/ictc/student_data/phuocbao/Desktop/TIMER_IP/FINAL_PROJECT/sim
+T_opt
+!s110 1762856837
+VZ?jK57H2Sf5T0]eXPb6:a2
+Z2 04 10 4 work test_bench fast 0
+=1-000ae431a4f1-69130f85-2e9f2-bf34
+Z3 !s124 OEM100
+Z4 o-quiet -auto_acc_if_foreign -work work -debugdb +access
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.2_1;73
+T_opt1
+!s110 1762847222
+Vi7il9XEf3fkRcnng`EJM<0
+R2
+=1-000ae431a4f1-6912e9f5-edc88-a4c1
+!s102 +cover=bcesft
+R3
+o-quiet -auto_acc_if_foreign -work work +cover=bcesft
+R5
+n@_opt1
+R6
+R1
+T_opt2
+!s110 1762847361
+VW:AUZg:IV[i0^<ZBH>]U03
+R2
+=1-000ae431a4f1-6912ea81-84d7-a5ae
+R3
+R4
+R5
+n@_opt2
+R6
+R1
+vapb_slave
+Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z8 !s110 1762856835
+!i10b 1
+!s100 ^===SiOf3d^8FzaYZ@6?a1
+IAm>G_Q<P[[WKDiY?GOVaO3
+S1
+Z9 d/home/minhnhut/Linux_Vim_Scripting/B4/sim
+Z10 w1762849644
+8../rtl/apb_slave.v
+F../rtl/apb_slave.v
+!i122 30
+L0 1 60
+Z11 VDg1SIo80bB@j0V0VzS_@n1
+Z12 OL;L;2021.2_1;73
+r1
+!s85 0
+31
+Z13 !s108 1762856835.000000
+Z14 !s107 ../sim/run_test.v|run_test.v|../tb/test_bench.v|../rtl/timer_top.v|../rtl/interrupt.v|../rtl/register.v|../rtl/ctrl_counter.v|../rtl/counter_64bit.v|../rtl/apb_slave.v|
+Z15 !s90 -sv|-f|compile.f|
+!i113 0
+Z16 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+vcounter_64bit
+R7
+R8
+!i10b 1
+!s100 oza<01cRQek6YP31T<@493
+IChI^Y=7:cCQikDm`04G7k1
+S1
+R9
+R10
+8../rtl/counter_64bit.v
+F../rtl/counter_64bit.v
+!i122 30
+L0 1 31
+R11
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R5
+vctrl_counter
+R7
+R8
+!i10b 1
+!s100 L]zfkf==ISH4HZPOVhj`?3
+IGffCL4I9hR83f]71zP72b3
+S1
+R9
+R10
+8../rtl/ctrl_counter.v
+F../rtl/ctrl_counter.v
+!i122 30
+L0 1 51
+R11
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R5
+vinterrupt
+R7
+R8
+!i10b 1
+!s100 eTP=[ZdSDZGf;gRI5G]cI0
+I=keUD<:mV@jF=k72ELoe@3
+S1
+R9
+R10
+8../rtl/interrupt.v
+F../rtl/interrupt.v
+!i122 30
+L0 1 26
+R11
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R5
+vregister
+R7
+R8
+!i10b 1
+!s100 OA6^fB7IgD1DFWh>^V>2m3
+IPWzB5b^VczKC^KN7=0hm[3
+S1
+R9
+R10
+8../rtl/register.v
+F../rtl/register.v
+!i122 30
+L0 1 221
+R11
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R5
+Xrun_test_v_unit
+R7
+R8
+VMdGZY;DjC8Db_eM]Go_P]2
+r1
+!s85 0
+!i10b 1
+!s100 W<mIOkV7M08LNDHY4;o_l0
+IMdGZY;DjC8Db_eM]Go_P]2
+!i103 1
+S1
+R9
+Z17 w1762856835
+8run_test.v
+Frun_test.v
+!i122 30
+L0 1 0
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R5
+vtest_bench
+R7
+R8
+!i10b 1
+!s100 =j]:FU2l]05[Ug@9B7P5@1
+I3j^IWEU>`9<T4V:^H0Dd40
+S1
+R9
+R17
+8../tb/test_bench.v
+F../tb/test_bench.v
+F../sim/run_test.v
+!i122 30
+L0 3 932
+R11
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R5
+vtimer_top
+R7
+R8
+!i10b 1
+!s100 Rf39A3P]Qf;XdG;:NdaN;0
+IHG9zkHkcEMgn>0hYUTTA`2
+S1
+R9
+R10
+8../rtl/timer_top.v
+F../rtl/timer_top.v
+!i122 30
+L0 1 98
+R11
+R12
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 0
+R16
+R5

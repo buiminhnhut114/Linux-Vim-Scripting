@@ -1,0 +1,7 @@
+./src/apb_intf.sv
+./src/apb_test.sv
+./src/apb_err_slv.sv
+./src/apb_demux.sv
+./src/apb_cdc.sv
+./src/apb_regs.sv
+./src/apb_pkg.sv

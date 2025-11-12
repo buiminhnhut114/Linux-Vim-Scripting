@@ -1,0 +1,2160 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /test_bench/uut/apb_inst
+=== Design Unit: work.apb_slave
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                     12         8         4    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /test_bench/uut/apb_inst --
+
+  File ../rtl/apb_slave.v
+
+
+----------------Focused Expression View-----------------
+Line       52 Item    1  ((tim_paddr <= 24) && (tim_paddr >= 0))
+Expression totals: 0 of 2 input terms covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  (tim_paddr <= 24)         N  '_0' not hit             Hit '_0'
+   (tim_paddr >= 0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_paddr <= 24)_0   -                             
+  Row   2:          5  (tim_paddr <= 24)_1   (tim_paddr >= 0)              
+  Row   3:    ***0***  (tim_paddr >= 0)_0    (tim_paddr <= 24)             
+  Row   4:          5  (tim_paddr >= 0)_1    (tim_paddr <= 24)             
+
+----------------Focused Expression View-----------------
+Line       55 Item    1  ((pready_up && tim_pwrite) && AddrValid)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+   AddrValid         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          5  pready_up_0           -                             
+  Row   2:          5  pready_up_1           (AddrValid && tim_pwrite)     
+  Row   3:          5  tim_pwrite_0          pready_up                     
+  Row   4:          5  tim_pwrite_1          (AddrValid && pready_up)      
+  Row   5:    ***0***  AddrValid_0           (pready_up && tim_pwrite)     
+  Row   6:          5  AddrValid_1           (pready_up && tim_pwrite)     
+
+----------------Focused Expression View-----------------
+Line       58 Item    1  ((~tim_pwrite && pready_up) && AddrValid)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+   AddrValid         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          5  tim_pwrite_0          (AddrValid && pready_up)      
+  Row   2:          5  tim_pwrite_1          -                             
+  Row   3:          5  pready_up_0           ~tim_pwrite                   
+  Row   4:          5  pready_up_1           (AddrValid && ~tim_pwrite)    
+  Row   5:    ***0***  AddrValid_0           (~tim_pwrite && pready_up)    
+  Row   6:          5  AddrValid_1           (~tim_pwrite && pready_up)    
+
+
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         10         8         2    80.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /test_bench/uut/apb_inst --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                         AddrValid           0           0        0.00 
+                                         pready_in           5           5      100.00 
+                                        pready_out           5           5      100.00 
+                                       pready_temp           5           5      100.00 
+                                         pready_up           5           5      100.00 
+
+Total Node Count     =          5 
+Toggled Node Count   =          4 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      80.00% (8 of 10 bins)
+
+=================================================================================
+=== Instance: /test_bench/uut/r_inst
+=== Design Unit: work.register
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        48        31        17    64.58%
+
+================================Branch Details================================
+
+Branch Coverage for instance /test_bench/uut/r_inst
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/register.v
+------------------------------------IF Branch------------------------------------
+    40                                        15     Count coming in to IF
+    40              1                    ***0***       	assign tcr_data_pre = tcr_w_sel ? wdata[2:0]: tcr_data;
+    40              2                         15       	assign tcr_data_pre = tcr_w_sel ? wdata[2:0]: tcr_data;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    60                                        10     Count coming in to IF
+    60              1                    ***0***     	assign div_val_pre = tcr_w_sel ? wdata[11:8] : div_val_next;
+    60              2                         10     	assign div_val_pre = tcr_w_sel ? wdata[11:8] : div_val_next;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    63                                        10     Count coming in to IF
+    63              1                         10     	assign div_val_next = ((4'b0000 <= wdata[11:8]) && (wdata[11:8] <= 4'b1000)) ? div_val_pre : div_val_temp;
+    63              2                    ***0***     	assign div_val_next = ((4'b0000 <= wdata[11:8]) && (wdata[11:8] <= 4'b1000)) ? div_val_pre : div_val_temp;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    108                                       15     Count coming in to IF
+    108             1                    ***0***       	assign tdr1_data_pre   = tdr1_w_sel ? count[63:32] : tdr1_data;
+    108             2                         15       	assign tdr1_data_pre   = tdr1_w_sel ? count[63:32] : tdr1_data;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    126                                       15     Count coming in to IF
+    126             1                    ***0***       	assign tcmp0_data_pre   = tcmp0_w_sel ? wdata : tcmp0_data;
+    126             2                         15       	assign tcmp0_data_pre   = tcmp0_w_sel ? wdata : tcmp0_data;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    145                                       15     Count coming in to IF
+    145             1                    ***0***       	assign tcmp1_data_pre   = tcmp1_w_sel ? wdata : tcmp1_data;
+    145             2                         15       	assign tcmp1_data_pre   = tcmp1_w_sel ? wdata : tcmp1_data;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    163                                       15     Count coming in to IF
+    163             1                    ***0***       	assign tier_data_pre  = tier_w_sel ? wdata[0] : tier_data;
+    163             2                         15       	assign tier_data_pre  = tier_w_sel ? wdata[0] : tier_data;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    184                                       15     Count coming in to IF
+    184             1                    ***0***       	assign tisr_data_pre  =   tisr_w_sel  &&    int_st  ? 1'b0     :
+    185             1                         15     	 	                 (~tisr_w_sel) &&    int_st  ? int_st   :
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    185                                        5     Count coming in to IF
+    185             2                    ***0***     	 	                 (~tisr_w_sel) &&    int_st  ? int_st   :
+    186             1                          5     		 	           tisr_w_sel  &&  (~int_st) ? int_st   : tisr_data ;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    186                                       15     Count coming in to IF
+    186             2                    ***0***     		 	           tisr_w_sel  &&  (~int_st) ? int_st   : tisr_data ;
+    186             3                         15     		 	           tisr_w_sel  &&  (~int_st) ? int_st   : tisr_data ;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------CASE Branch------------------------------------
+    207             1                    ***0***     			  	TCR     : rd = {20'b0 , div_val [3:0] , 5'b0 , count_clr , div_en , timer_en };
+    209             1                    ***0***     			  	TDR1    : rd = tdr1_data;
+    210             1                    ***0***     			  	TCMP0   : rd = tcmp0_data;
+    211             1                    ***0***     			  	TCMP1   : rd = tcmp1_data;
+    212             1                    ***0***     			  	TIER    : rd = {31'b0 , int_en};
+    213             1                    ***0***     			  	TISR    : rd = {31'b0 , status};
+    214             1                    ***0***     			  	default : rd = 32'h0;
+Branch totals: 1 hit of 8 branches = 12.50%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /test_bench/uut/r_inst --
+
+  File ../rtl/register.v
+----------------Focused Condition View-------------------
+Line       63 Item    1  ((0 <= tim_wdata[11:8]) && (tim_wdata[11:8] <= 8))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+              Input Term   Covered  Reason for no coverage   Hint
+             -----------  --------  -----------------------  --------------
+  (0 <= tim_wdata[11:8])         N  '_0' not hit             Hit '_0'
+  (tim_wdata[11:8] <= 8)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target                Non-masking condition(s)      
+ ---------  ---------  --------------------      -------------------------     
+  Row   1:    ***0***  (0 <= tim_wdata[11:8])_0  -                             
+  Row   2:          5  (0 <= tim_wdata[11:8])_1  (tim_wdata[11:8] <= 8)        
+  Row   3:    ***0***  (tim_wdata[11:8] <= 8)_0  (0 <= tim_wdata[11:8])        
+  Row   4:          5  (tim_wdata[11:8] <= 8)_1  (0 <= tim_wdata[11:8])        
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                     21         1        20     4.76%
+
+================================Expression Details================================
+
+Expression Coverage for instance /test_bench/uut/r_inst --
+
+  File ../rtl/register.v
+----------------Focused Expression View-----------------
+Line       34 Item    1  (w_en && (addr == 0))
+Expression totals: 0 of 2 input terms covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+         w_en         N  '_1' not hit             Hit '_1'
+  (addr == 0)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          5  w_en_0                -                             
+  Row   2:    ***0***  w_en_1                (addr == 0)                   
+  Row   3:          5  (addr == 0)_0         w_en                          
+  Row   4:    ***0***  (addr == 0)_1         w_en                          
+
+----------------Focused Expression View-----------------
+Line       87 Item    1  (w_en && (addr == 4))
+Expression totals: 1 of 2 input terms covered = 50.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (addr == 4)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          5  w_en_0                -                             
+  Row   2:          5  w_en_1                (addr == 4)                   
+  Row   3:    ***0***  (addr == 4)_0         w_en                          
+  Row   4:          5  (addr == 4)_1         w_en                          
+
+----------------Focused Expression View-----------------
+Line       107 Item    1  (w_en && (addr == 8))
+Expression totals: 0 of 2 input terms covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+         w_en         N  '_1' not hit             Hit '_1'
+  (addr == 8)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          5  w_en_0                -                             
+  Row   2:    ***0***  w_en_1                (addr == 8)                   
+  Row   3:          5  (addr == 8)_0         w_en                          
+  Row   4:    ***0***  (addr == 8)_1         w_en                          
+
+----------------Focused Expression View-----------------
+Line       125 Item    1  (w_en && (addr == 12))
+Expression totals: 0 of 2 input terms covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+          w_en         N  '_1' not hit             Hit '_1'
+  (addr == 12)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          5  w_en_0                -                             
+  Row   2:    ***0***  w_en_1                (addr == 12)                  
+  Row   3:          5  (addr == 12)_0        w_en                          
+  Row   4:    ***0***  (addr == 12)_1        w_en                          
+
+----------------Focused Expression View-----------------
+Line       144 Item    1  (w_en && (addr == 16))
+Expression totals: 0 of 2 input terms covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+          w_en         N  '_1' not hit             Hit '_1'
+  (addr == 16)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          5  w_en_0                -                             
+  Row   2:    ***0***  w_en_1                (addr == 16)                  
+  Row   3:          5  (addr == 16)_0        w_en                          
+  Row   4:    ***0***  (addr == 16)_1        w_en                          
+
+----------------Focused Expression View-----------------
+Line       162 Item    1  (w_en && (addr == 20))
+Expression totals: 0 of 2 input terms covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+          w_en         N  '_1' not hit             Hit '_1'
+  (addr == 20)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          5  w_en_0                -                             
+  Row   2:    ***0***  w_en_1                (addr == 20)                  
+  Row   3:          5  (addr == 20)_0        w_en                          
+  Row   4:    ***0***  (addr == 20)_1        w_en                          
+
+-----------Focused Expression View (Bimodal)------------
+Line       163 Item    1  (tier_w_sel? tim_wdata[0]: tier_data)
+Expression totals: 0 of 3 input terms covered = 0.00%
+
+      Input Term   Covered  Reason for no coverage                  Hint
+     -----------  --------  --------------------------------------  --------------
+      tier_w_sel         N  '_0' hit but '_1' is not hit           Hit '_1' for output ->1
+    tim_wdata[0]         N  No hits                                Hit '_0' and '_1' for different outputs
+       tier_data         N  '_0' hit but '_1' is not hit           Hit '_1' for output ->1
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           5           0  tier_w_sel_0          -                                  
+ Row   2:           0           0  tier_w_sel_1          -                                  
+ Row   3:           0           0  tim_wdata[0]_0        tier_w_sel                         
+ Row   4:           0           0  tim_wdata[0]_1        tier_w_sel                         
+ Row   5:           5           0  tier_data_0           ~tier_w_sel                        
+ Row   6:           0           0  tier_data_1           ~tier_w_sel                        
+
+----------------Focused Expression View-----------------
+Line       183 Item    1  (w_en && (addr == 24))
+Expression totals: 0 of 2 input terms covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+          w_en         N  '_1' not hit             Hit '_1'
+  (addr == 24)         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:          5  w_en_0                -                             
+  Row   2:    ***0***  w_en_1                (addr == 24)                  
+  Row   3:          5  (addr == 24)_0        w_en                          
+  Row   4:    ***0***  (addr == 24)_1        w_en                          
+
+-----------Focused Expression View (Bimodal)------------
+Line       184 Item    1  ((tisr_w_sel && int_st)? 1'b0: ((~tisr_w_sel && int_st)? int_st: ((tisr_w_sel && ~int_st)? int_st: tisr_data)))
+Expression totals: 0 of 3 input terms covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage                  Hint
+   -----------  --------  --------------------------------------  --------------
+    tisr_w_sel         N  '_0' hit but '_1' is not hit           Hit '_1' for output ->1
+        int_st         N  '_0' hit but '_1' is not hit           Hit '_1' for output ->1
+     tisr_data         N  '_0' hit but '_1' is not hit           Hit '_1' for output ->1
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)                                                                                         
+
+---------  ----------  ----------  --------------------  -------------------------                                                                                        
+ Row   1:           5           0  tisr_w_sel_0          ((~tisr_w_sel && int_st)? int_st: ((tisr_w_sel && ~int_st)? int_st: tisr_data)), int_st, ~(~tisr_w_sel && int_st)
+ Row   2:           0           0  tisr_w_sel_1          int_st, ~(tisr_w_sel && int_st), ~int_st                                                                         
+ Row   3:           5           0  int_st_0              ~tisr_w_sel, tisr_w_sel, (tisr_w_sel && ~int_st)                                                                 
+ Row   4:           0           0  int_st_1              tisr_w_sel, ~tisr_w_sel, (~(tisr_w_sel && int_st) && (~tisr_w_sel && int_st))                                    
+ Row   5:           5           0  tisr_data_0           (~(tisr_w_sel && int_st) && ~(~tisr_w_sel && int_st) && ~(tisr_w_sel && ~int_st))                                
+ Row   6:           0           0  tisr_data_1           (~(tisr_w_sel && int_st) && ~(~tisr_w_sel && int_st) && ~(tisr_w_sel && ~int_st))                                
+
+----------------Focused Expression View-----------------
+Line       220 Item    1  (count == {tcmp1_data,tcmp0_data})
+Expression totals: 0 of 1 input term covered = 0.00%
+
+                          Input Term   Covered  Reason for no coverage   Hint
+                         -----------  --------  -----------------------  --------------
+  (count == {tcmp1_data,tcmp0_data})         N  '_1' not hit             Hit '_1'
+
+     Rows:       Hits  FEC Target                            Non-masking condition(s)      
+ ---------  ---------  --------------------                  -------------------------     
+  Row   1:          5  (count == {tcmp1_data,tcmp0_data})_0  -                             
+  Row   2:    ***0***  (count == {tcmp1_data,tcmp0_data})_1  -                             
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      52        45         7    86.53%
+
+================================Statement Details================================
+
+Statement Coverage for instance /test_bench/uut/r_inst --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/register.v
+    207             1     			  	TCR     : rd = {20'b0 , div_val [3:0] , 5'b0 , count_clr , div_en , timer_en };
+    209             1     			  	TDR1    : rd = tdr1_data;
+    210             1     			  	TCMP0   : rd = tcmp0_data;
+    211             1     			  	TCMP1   : rd = tcmp1_data;
+    212             1     			  	TIER    : rd = {31'b0 , int_en};
+    213             1     			  	TISR    : rd = {31'b0 , status};
+    214             1     			  	default : rd = 32'h0;
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        662         6       656     0.90%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /test_bench/uut/r_inst --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                         count_clr           0           0        0.00 
+                                            div_en           0           0        0.00 
+                                      div_val[0-3]           0           0        0.00 
+                                 div_val_next[0-3]           0           0        0.00 
+                                  div_val_pre[0-3]           0           0        0.00 
+                                 div_val_temp[0-3]           0           0        0.00 
+                                              r_en           5           5      100.00 
+                                          rd[0-31]           0           0        0.00 
+                                            status           0           0        0.00 
+                                  tcmp0_data[0-31]           0           0        0.00 
+                              tcmp0_data_pre[0-31]           0           0        0.00 
+                                       tcmp0_w_sel           0           0        0.00 
+                                  tcmp1_data[0-31]           0           0        0.00 
+                              tcmp1_data_pre[0-31]           0           0        0.00 
+                                       tcmp1_w_sel           0           0        0.00 
+                                     tcr_data[0-2]           0           0        0.00 
+                                    tcr_data1[0-3]           0           0        0.00 
+                                 tcr_data_pre[0-2]           0           0        0.00 
+                                         tcr_w_sel           0           0        0.00 
+                                   tdr0_data[0-31]           0           0        0.00 
+                               tdr0_data_pre[0-31]           0           0        0.00 
+                                        tdr0_w_sel           5           5      100.00 
+                                   tdr1_data[0-31]           0           0        0.00 
+                               tdr1_data_pre[0-31]           0           0        0.00 
+                                        tdr1_w_sel           0           0        0.00 
+                                         tier_data           0           0        0.00 
+                                     tier_data_pre           0           0        0.00 
+                                        tier_w_sel           0           0        0.00 
+                                          timer_en           0           0        0.00 
+                                         tisr_data           0           0        0.00 
+                                     tisr_data_pre           0           0        0.00 
+                                        tisr_w_sel           0           0        0.00 
+                                              w_en           5           5      100.00 
+
+Total Node Count     =        331 
+Toggled Node Count   =          3 
+Untoggled Node Count =        328 
+
+Toggle Coverage      =       0.90% (6 of 662 bins)
+
+=================================================================================
+=== Instance: /test_bench/uut/cd_inst
+=== Design Unit: work.ctrl_counter
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        16         5        11    31.25%
+
+================================Branch Details================================
+
+Branch Coverage for instance /test_bench/uut/cd_inst
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/ctrl_counter.v
+------------------------------------CASE Branch------------------------------------
+    21              1                    ***0***     	   4'b0000: int_count_max = clock       ;
+    23              1                    ***0***     	   4'b0010: int_count_max = 8'b0000_0011;
+    24              1                    ***0***     	   4'b0011: int_count_max = 8'b0000_0111;
+    25              1                    ***0***     	   4'b0100: int_count_max = 8'b0000_1111;
+    26              1                    ***0***     	   4'b0101: int_count_max = 8'b0001_1111;
+    27              1                    ***0***     	   4'b0110: int_count_max = 8'b0011_1111;
+    28              1                    ***0***     	   4'b0111: int_count_max = 8'b0111_1111;
+    29              1                    ***0***     	   4'b1000: int_count_max = 8'b1111_1111;
+Branch totals: 2 hits of 10 branches = 20.00%
+
+------------------------------------IF Branch------------------------------------
+    35                                       100     Count coming in to IF
+    35              1                         25     	  if(!sys_rst_n) begin
+    38              1                         75     	  end else if(cnt_en)
+    40              1                    ***0***     	  else if(timer_en) begin
+    43              1                    ***0***     	  end else
+Branch totals: 2 hits of 4 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    49                                       195     Count coming in to IF
+    49              1                    ***0***       assign cnt_en = div_en ? (int_count == int_count_max) : sys_clk;
+    49              2                        195       assign cnt_en = div_en ? (int_count == int_count_max) : sys_clk;
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         1         2    33.33%
+
+================================Expression Details================================
+
+Expression Coverage for instance /test_bench/uut/cd_inst --
+
+  File ../rtl/ctrl_counter.v
+-----------Focused Expression View (Bimodal)------------
+Line       49 Item    1  (div_en? (int_count == int_count_max): sys_clk)
+Expression totals: 1 of 3 input terms covered = 33.33%
+
+                      Input Term   Covered  Reason for no coverage                  Hint
+                     -----------  --------  --------------------------------------  --------------
+                          div_en         N  '_0' hit but '_1' not hit              Hit '_1' for output ->0 or ->1
+    (int_count == int_count_max)         N  No hits                                Hit '_0' and '_1' for different outputs
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target                        Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------              -------------------------          
+ Row   1:           5           5  div_en_0                          -                                  
+ Row   2:           0           0  div_en_1                          -                                  
+ Row   3:           0           0  (int_count == int_count_max)_0    div_en                             
+ Row   4:           0           0  (int_count == int_count_max)_1    div_en                             
+ Row   5:           5           0  sys_clk_0                         ~div_en                            
+ Row   6:           0           5  sys_clk_1                         ~div_en                            
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      19         8        11    42.10%
+
+================================Statement Details================================
+
+Statement Coverage for instance /test_bench/uut/cd_inst --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/ctrl_counter.v
+    21              1     	   4'b0000: int_count_max = clock       ;
+    23              1     	   4'b0010: int_count_max = 8'b0000_0011;
+    24              1     	   4'b0011: int_count_max = 8'b0000_0111;
+    25              1     	   4'b0100: int_count_max = 8'b0000_1111;
+    26              1     	   4'b0101: int_count_max = 8'b0001_1111;
+    27              1     	   4'b0110: int_count_max = 8'b0011_1111;
+    28              1     	   4'b0111: int_count_max = 8'b0111_1111;
+    29              1     	   4'b1000: int_count_max = 8'b1111_1111;
+    41              1     		  int_count <= int_count_next + 1'b1;
+    42              1                       int_count_temp <= int_count_next;
+    44              1     		  int_count <= int_count_next;
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         80         4        76     5.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /test_bench/uut/cd_inst --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                             clock           5           5      100.00 
+                                            cnt_en           5           5      100.00 
+                                            div_en           0           0        0.00 
+                                      div_val[0-3]           0           0        0.00 
+                                    int_count[0-7]           0           0        0.00 
+                                int_count_max[0-7]           0           0        0.00 
+                               int_count_next[0-7]           0           0        0.00 
+                               int_count_temp[0-7]           0           0        0.00 
+                                          timer_en           0           0        0.00 
+
+Total Node Count     =         40 
+Toggled Node Count   =          2 
+Untoggled Node Count =         38 
+
+Toggle Coverage      =       5.00% (4 of 80 bins)
+
+=================================================================================
+=== Instance: /test_bench/uut/c_inst
+=== Design Unit: work.counter_64bit
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         6         3         3    50.00%
+
+================================Branch Details================================
+
+Branch Coverage for instance /test_bench/uut/c_inst
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/counter_64bit.v
+------------------------------------IF Branch------------------------------------
+    15                                       100     Count coming in to IF
+    15              1                         25     	  if(!sys_rst_n)
+    17              1                    ***0***     	  else if(count_clr) 
+    19              1                         75     	   else if(cnt_en) begin
+    25              1                    ***0***     	   else
+Branch totals: 2 hits of 4 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    20                                        75     Count coming in to IF
+    20              1                    ***0***     		   if(timer_en)
+    22              1                         75     	        else
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       6         3         3    50.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /test_bench/uut/c_inst --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/counter_64bit.v
+    18              1     		   count_temp <= 64'b0;
+    21              1     		       count_temp <= count_temp + 1'b1;
+    26              1     		   count_temp <= count_temp;
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        256         0       256     0.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /test_bench/uut/c_inst --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                       count[0-63]           0           0        0.00 
+                                  count_temp[0-63]           0           0        0.00 
+
+Total Node Count     =        128 
+Toggled Node Count   =          0 
+Untoggled Node Count =        128 
+
+Toggle Coverage      =       0.00% (0 of 256 bins)
+
+=================================================================================
+=== Instance: /test_bench/uut/i_inst
+=== Design Unit: work.interrupt
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                         3         2         1    66.66%
+
+================================Branch Details================================
+
+Branch Coverage for instance /test_bench/uut/i_inst
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/interrupt.v
+------------------------------------IF Branch------------------------------------
+    15                                        15     Count coming in to IF
+    15              1                         10     		if(!sys_rst_n)
+    17              1                          5     		else if (clear || ~int_en)
+    19              1                    ***0***     		else
+Branch totals: 2 hits of 3 branches = 66.66%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /test_bench/uut/i_inst --
+
+  File ../rtl/interrupt.v
+----------------Focused Condition View-------------------
+Line       17 Item    1  (clear || ~int_en)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+       clear         N  No hits                  Hit '_0' and '_1'
+      int_en         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  clear_0               int_en                        
+  Row   2:    ***0***  clear_1               -                             
+  Row   3:    ***0***  int_en_0              ~clear                        
+  Row   4:    ***0***  int_en_1              ~clear                        
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         3         1    75.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /test_bench/uut/i_inst --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../rtl/interrupt.v
+    20              1     			int_temp <= int_temp;
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                          6         0         6     0.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /test_bench/uut/i_inst --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                             clear           0           0        0.00 
+                                          int_temp           0           0        0.00 
+                                             match           0           0        0.00 
+
+Total Node Count     =          3 
+Toggled Node Count   =          0 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =       0.00% (0 of 6 bins)
+
+=================================================================================
+=== Instance: /test_bench/uut
+=== Design Unit: work.timer_top
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        224         8       216     3.57%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /test_bench/uut --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                             clear           0           0        0.00 
+                                            cnt_en           5           5      100.00 
+                                       count[0-63]           0           0        0.00 
+                                         count_clr           0           0        0.00 
+                                            div_en           0           0        0.00 
+                                      div_val[0-3]           0           0        0.00 
+                                            int_en           0           0        0.00 
+                                            int_st           0           0        0.00 
+                                             match           0           0        0.00 
+                                              r_en           5           5      100.00 
+                                           tim_int           0           0        0.00 
+                                        tim_pready           5           5      100.00 
+                                   tim_rdata[0-31]           0           0        0.00 
+                                          timer_en           0           0        0.00 
+                                              w_en           5           5      100.00 
+
+Total Node Count     =        112 
+Toggled Node Count   =          4 
+Untoggled Node Count =        108 
+
+Toggle Coverage      =       3.57% (8 of 224 bins)
+
+=================================================================================
+=== Instance: /test_bench
+=== Design Unit: work.test_bench
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                       115         6       109     5.21%
+
+================================Branch Details================================
+
+Branch Coverage for instance /test_bench
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/test_bench.v
+------------------------------------CASE Branch------------------------------------
+    117                                  ***0***     Count coming in to CASE
+    118             1                    ***0***     		      12'h00: begin
+    126             1                    ***0***     	   	     12'h04: begin
+    134             1                    ***0***     		     12'h08: begin
+    141             1                    ***0***     		     12'h0C:  begin
+    148             1                    ***0***     		     12'h10:  begin
+    155             1                    ***0***     		     12'h14:  begin
+    162             1                    ***0***     		     12'h18:  begin
+    169             1                    ***0***     		     default: begin
+Branch totals: 0 hits of 8 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    121                                  ***0***     Count coming in to IF
+    121             1                    ***0***     			      if(tim_rdata == 32'h00000100)			       
+    123             1                    ***0***     			      else
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    129                                  ***0***     Count coming in to IF
+    129             1                    ***0***     			      if(tim_rdata == 32'h00000000)			       
+    131             1                    ***0***     			      else
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    136                                  ***0***     Count coming in to IF
+    136             1                    ***0***     			      if(tim_rdata == 32'h00000000)			       
+    138             1                    ***0***     			      else
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    143                                  ***0***     Count coming in to IF
+    143             1                    ***0***     			      if(tim_rdata == 32'hffffffff)			       
+    145             1                    ***0***     			      else
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    150                                  ***0***     Count coming in to IF
+    150             1                    ***0***     			      if(tim_rdata == 32'hffffffff)			       
+    152             1                    ***0***     			      else
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    157                                  ***0***     Count coming in to IF
+    157             1                    ***0***     			      if(tim_rdata == 32'h00000000)			       
+    159             1                    ***0***     			      else
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    164                                  ***0***     Count coming in to IF
+    164             1                    ***0***     			      if(tim_rdata == 32'h00000000)			       
+    166             1                    ***0***     			      else
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    171                                  ***0***     Count coming in to IF
+    171             1                    ***0***     			      if(tim_rdata == 32'h00000000)			       
+    173             1                    ***0***     			      else
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    200                                  ***0***     Count coming in to IF
+    200             1                    ***0***     	  if(uut.r_inst.w_en  == 1'b1) begin
+    205             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    219                                  ***0***     Count coming in to IF
+    219             1                    ***0***     	  if(uut.r_inst.r_en == 1'b1) begin
+    224             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    252                                  ***0***     Count coming in to IF
+    252             1                    ***0***     	  if(uut.cd_inst.div_en == 1 && uut.cd_inst.timer_en == 1) begin 
+    255             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------CASE Branch------------------------------------
+    261                                  ***0***     Count coming in to CASE
+    262             1                    ***0***     		  4'b0000:   begin
+    283             1                    ***0***     		  4'b0001:   begin
+    304             1                    ***0***     		  4'b0010:   begin
+    325             1                    ***0***     		  4'b0011:   begin
+    346             1                    ***0***     		  4'b0100:   begin
+    367             1                    ***0***     		  4'b0101:   begin
+    386             1                    ***0***     		  4'b0110:   begin
+    406             1                    ***0***     		  4'b0111:   begin
+    425             1                    ***0***     		  4'b1000:   begin
+    446             1                    ***0***     		  default:   begin
+Branch totals: 0 hits of 10 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    266                                  ***0***     Count coming in to IF
+    266             1                    ***0***     			     if(uut.cd_inst.int_count_temp >= 1'b0) begin
+    270             1                    ***0***     		             else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    275                                  ***0***     Count coming in to IF
+    275             1                    ***0***     			     if((uut.cd_inst.cnt_en == 1) && (uut.cd_inst.int_count == 0))
+    277             1                    ***0***     			     else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    287                                  ***0***     Count coming in to IF
+    287             1                    ***0***     			     if(uut.cd_inst.int_count_temp >= 1'b0) begin
+    291             1                    ***0***     		             else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    296                                  ***0***     Count coming in to IF
+    296             1                    ***0***     			     if((uut.cd_inst.cnt_en == 1) && (uut.cd_inst.int_count == 1))
+    298             1                    ***0***     			     else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    308                                  ***0***     Count coming in to IF
+    308             1                    ***0***     			     if(uut.cd_inst.int_count_temp >= 1'b0) begin
+    312             1                    ***0***     		             else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    317                                  ***0***     Count coming in to IF
+    317             1                    ***0***     			     if((uut.cd_inst.cnt_en == 1) && (uut.cd_inst.int_count == 3))
+    319             1                    ***0***     			     else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    329                                  ***0***     Count coming in to IF
+    329             1                    ***0***     			     if(uut.cd_inst.int_count_temp >= 1'b0) begin
+    333             1                    ***0***     		             else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    338                                  ***0***     Count coming in to IF
+    338             1                    ***0***     			     if((uut.cd_inst.cnt_en == 1) && (uut.cd_inst.int_count == 7))
+    340             1                    ***0***     			     else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    350                                  ***0***     Count coming in to IF
+    350             1                    ***0***     			     if(uut.cd_inst.int_count_temp >= 1'b0) begin
+    354             1                    ***0***     		             else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    359                                  ***0***     Count coming in to IF
+    359             1                    ***0***     			     if((uut.cd_inst.cnt_en == 1) && (uut.cd_inst.int_count == 15))
+    361             1                    ***0***     			     else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    371                                  ***0***     Count coming in to IF
+    371             1                    ***0***     			     if(uut.cd_inst.int_count_temp >= 1'b0) begin
+    375             1                    ***0***     		             else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    379                                  ***0***     Count coming in to IF
+    379             1                    ***0***     			     if((uut.cd_inst.cnt_en == 1) && (uut.cd_inst.int_count == 31))
+    381             1                    ***0***     			     else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    390                                  ***0***     Count coming in to IF
+    390             1                    ***0***     			     if(uut.cd_inst.int_count_temp >= 1'b0) begin
+    394             1                    ***0***     		             else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    399                                  ***0***     Count coming in to IF
+    399             1                    ***0***     			     if((uut.cd_inst.cnt_en == 1) && (uut.cd_inst.int_count == 63))
+    401             1                    ***0***     			     else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    410                                  ***0***     Count coming in to IF
+    410             1                    ***0***     			     if(uut.cd_inst.int_count_temp >= 1'b0) begin
+    414             1                    ***0***     		             else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    418                                  ***0***     Count coming in to IF
+    418             1                    ***0***     			     if((uut.cd_inst.cnt_en == 1) && (uut.cd_inst.int_count == 127))
+    420             1                    ***0***     			     else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    429                                  ***0***     Count coming in to IF
+    429             1                    ***0***     			     if(uut.cd_inst.int_count_temp >= 1'b0) begin
+    433             1                    ***0***     			     else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    439                                  ***0***     Count coming in to IF
+    439             1                    ***0***     			     if((uut.cd_inst.cnt_en == 1) && (uut.cd_inst.int_count == 255))
+    441             1                    ***0***     			     else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    482                                  ***0***     Count coming in to IF
+    482             1                    ***0***     	  if(uut.cd_inst.div_en == 0 && uut.cd_inst.timer_en == 0) begin
+    499             1                    ***0***     	  else if(uut.cd_inst.div_en == 0 && uut.cd_inst.timer_en == 1) begin
+    516             1                    ***0***     	  else if(uut.cd_inst.div_en == 1 && uut.cd_inst.timer_en == 0) begin
+    533             1                    ***0***     	  else if(uut.cd_inst.div_en == 1 && uut.cd_inst.timer_en == 1) begin
+    550             1                    ***0***     	  else begin 
+Branch totals: 0 hits of 5 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    489                                  ***0***     Count coming in to IF
+    489             1                    ***0***     	        if(uut.c_inst.count == 0) begin
+    493             1                    ***0***     	        else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    506                                  ***0***     Count coming in to IF
+    506             1                    ***0***     	        if(uut.c_inst.count != 0) begin
+    510             1                    ***0***     	        else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    523                                  ***0***     Count coming in to IF
+    523             1                    ***0***     	        if(uut.c_inst.count == 0) begin
+    527             1                    ***0***     	        else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    540                                  ***0***     Count coming in to IF
+    540             1                    ***0***     	        if(uut.c_inst.count != 0) begin
+    544             1                    ***0***     	        else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    587                                  ***0***     Count coming in to IF
+    587             1                    ***0***     	  if(uut.c_inst.count != 0) begin
+    590             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    614                                  ***0***     Count coming in to IF
+    614             1                    ***0***     	  if(count_now != count_later) begin
+    617             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    642                                  ***0***     Count coming in to IF
+    642             1                    ***0***     	  if(count_now == count_later) begin
+    646             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    672                                  ***0***     Count coming in to IF
+    672             1                    ***0***     	  if(count_now == count_later) begin
+    675             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    691                                  ***0***     Count coming in to IF
+    691             1                    ***0***     	  if(uut.c_inst.count == 0) begin
+    695             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    802                                  ***0***     Count coming in to IF
+    802             1                    ***0***     	  if(tim_int == 1) begin
+    804             1                    ***0***     	 end else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    819                                  ***0***     Count coming in to IF
+    819             1                    ***0***     	  if(tim_rdata == 32'h00000001 && tim_paddr == 12'h18) begin
+    822             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    842                                  ***0***     Count coming in to IF
+    842             1                    ***0***     	  if(tim_rdata == 32'h00000001 && tim_paddr == 12'h18) begin
+    845             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    865                                  ***0***     Count coming in to IF
+    865             1                    ***0***     	  if(tim_rdata == 32'h00000000 && tim_paddr == 12'h18) begin
+    869             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    889                                  ***0***     Count coming in to IF
+    889             1                    ***0***     	  if(tim_rdata == 32'h00000000 && tim_paddr == 12'h18) begin
+    893             1                    ***0***     	  else begin
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                      62         0        62     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /test_bench --
+
+  File ../tb/test_bench.v
+----------------Focused Condition View-------------------
+Line       121 Item    1  (tim_rdata == 256)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+          Input Term   Covered  Reason for no coverage   Hint
+         -----------  --------  -----------------------  --------------
+  (tim_rdata == 256)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == 256)_0  -                             
+  Row   2:    ***0***  (tim_rdata == 256)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       129 Item    1  (tim_rdata == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (tim_rdata == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == 0)_0    -                             
+  Row   2:    ***0***  (tim_rdata == 0)_1    -                             
+
+----------------Focused Condition View-------------------
+Line       136 Item    1  (tim_rdata == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (tim_rdata == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == 0)_0    -                             
+  Row   2:    ***0***  (tim_rdata == 0)_1    -                             
+
+----------------Focused Condition View-------------------
+Line       143 Item    1  (tim_rdata == -1)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  (tim_rdata == -1)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == -1)_0   -                             
+  Row   2:    ***0***  (tim_rdata == -1)_1   -                             
+
+----------------Focused Condition View-------------------
+Line       150 Item    1  (tim_rdata == -1)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+  (tim_rdata == -1)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == -1)_0   -                             
+  Row   2:    ***0***  (tim_rdata == -1)_1   -                             
+
+----------------Focused Condition View-------------------
+Line       157 Item    1  (tim_rdata == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (tim_rdata == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == 0)_0    -                             
+  Row   2:    ***0***  (tim_rdata == 0)_1    -                             
+
+----------------Focused Condition View-------------------
+Line       164 Item    1  (tim_rdata == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (tim_rdata == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == 0)_0    -                             
+  Row   2:    ***0***  (tim_rdata == 0)_1    -                             
+
+----------------Focused Condition View-------------------
+Line       171 Item    1  (tim_rdata == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+  (tim_rdata == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == 0)_0    -                             
+  Row   2:    ***0***  (tim_rdata == 0)_1    -                             
+
+----------------Focused Condition View-------------------
+Line       252 Item    1  (div_en && timer_en)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+      div_en         N  No hits                  Hit '_0' and '_1'
+    timer_en         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  div_en_0              -                             
+  Row   2:    ***0***  div_en_1              timer_en                      
+  Row   3:    ***0***  timer_en_0            div_en                        
+  Row   4:    ***0***  timer_en_1            div_en                        
+
+----------------Focused Condition View-------------------
+Line       266 Item    1  (int_count_temp >= 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (int_count_temp >= 1'b0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (int_count_temp >= 1'b0)_0  -                             
+  Row   2:    ***0***  (int_count_temp >= 1'b0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       275 Item    1  (cnt_en && (int_count == 0))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+            cnt_en         N  No hits                  Hit '_0' and '_1'
+  (int_count == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  cnt_en_0              -                             
+  Row   2:    ***0***  cnt_en_1              (int_count == 0)              
+  Row   3:    ***0***  (int_count == 0)_0    cnt_en                        
+  Row   4:    ***0***  (int_count == 0)_1    cnt_en                        
+
+----------------Focused Condition View-------------------
+Line       287 Item    1  (int_count_temp >= 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (int_count_temp >= 1'b0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (int_count_temp >= 1'b0)_0  -                             
+  Row   2:    ***0***  (int_count_temp >= 1'b0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       296 Item    1  (cnt_en && (int_count == 1))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+            cnt_en         N  No hits                  Hit '_0' and '_1'
+  (int_count == 1)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  cnt_en_0              -                             
+  Row   2:    ***0***  cnt_en_1              (int_count == 1)              
+  Row   3:    ***0***  (int_count == 1)_0    cnt_en                        
+  Row   4:    ***0***  (int_count == 1)_1    cnt_en                        
+
+----------------Focused Condition View-------------------
+Line       308 Item    1  (int_count_temp >= 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (int_count_temp >= 1'b0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (int_count_temp >= 1'b0)_0  -                             
+  Row   2:    ***0***  (int_count_temp >= 1'b0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       317 Item    1  (cnt_en && (int_count == 3))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+            cnt_en         N  No hits                  Hit '_0' and '_1'
+  (int_count == 3)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  cnt_en_0              -                             
+  Row   2:    ***0***  cnt_en_1              (int_count == 3)              
+  Row   3:    ***0***  (int_count == 3)_0    cnt_en                        
+  Row   4:    ***0***  (int_count == 3)_1    cnt_en                        
+
+----------------Focused Condition View-------------------
+Line       329 Item    1  (int_count_temp >= 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (int_count_temp >= 1'b0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (int_count_temp >= 1'b0)_0  -                             
+  Row   2:    ***0***  (int_count_temp >= 1'b0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       338 Item    1  (cnt_en && (int_count == 7))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+        Input Term   Covered  Reason for no coverage   Hint
+       -----------  --------  -----------------------  --------------
+            cnt_en         N  No hits                  Hit '_0' and '_1'
+  (int_count == 7)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  cnt_en_0              -                             
+  Row   2:    ***0***  cnt_en_1              (int_count == 7)              
+  Row   3:    ***0***  (int_count == 7)_0    cnt_en                        
+  Row   4:    ***0***  (int_count == 7)_1    cnt_en                        
+
+----------------Focused Condition View-------------------
+Line       350 Item    1  (int_count_temp >= 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (int_count_temp >= 1'b0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (int_count_temp >= 1'b0)_0  -                             
+  Row   2:    ***0***  (int_count_temp >= 1'b0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       359 Item    1  (cnt_en && (int_count == 15))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+             cnt_en         N  No hits                  Hit '_0' and '_1'
+  (int_count == 15)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  cnt_en_0              -                             
+  Row   2:    ***0***  cnt_en_1              (int_count == 15)             
+  Row   3:    ***0***  (int_count == 15)_0   cnt_en                        
+  Row   4:    ***0***  (int_count == 15)_1   cnt_en                        
+
+----------------Focused Condition View-------------------
+Line       371 Item    1  (int_count_temp >= 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (int_count_temp >= 1'b0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (int_count_temp >= 1'b0)_0  -                             
+  Row   2:    ***0***  (int_count_temp >= 1'b0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       379 Item    1  (cnt_en && (int_count == 31))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+             cnt_en         N  No hits                  Hit '_0' and '_1'
+  (int_count == 31)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  cnt_en_0              -                             
+  Row   2:    ***0***  cnt_en_1              (int_count == 31)             
+  Row   3:    ***0***  (int_count == 31)_0   cnt_en                        
+  Row   4:    ***0***  (int_count == 31)_1   cnt_en                        
+
+----------------Focused Condition View-------------------
+Line       390 Item    1  (int_count_temp >= 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (int_count_temp >= 1'b0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (int_count_temp >= 1'b0)_0  -                             
+  Row   2:    ***0***  (int_count_temp >= 1'b0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       399 Item    1  (cnt_en && (int_count == 63))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+             cnt_en         N  No hits                  Hit '_0' and '_1'
+  (int_count == 63)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  cnt_en_0              -                             
+  Row   2:    ***0***  cnt_en_1              (int_count == 63)             
+  Row   3:    ***0***  (int_count == 63)_0   cnt_en                        
+  Row   4:    ***0***  (int_count == 63)_1   cnt_en                        
+
+----------------Focused Condition View-------------------
+Line       410 Item    1  (int_count_temp >= 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (int_count_temp >= 1'b0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (int_count_temp >= 1'b0)_0  -                             
+  Row   2:    ***0***  (int_count_temp >= 1'b0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       418 Item    1  (cnt_en && (int_count == 127))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+          Input Term   Covered  Reason for no coverage   Hint
+         -----------  --------  -----------------------  --------------
+              cnt_en         N  No hits                  Hit '_0' and '_1'
+  (int_count == 127)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  cnt_en_0              -                             
+  Row   2:    ***0***  cnt_en_1              (int_count == 127)            
+  Row   3:    ***0***  (int_count == 127)_0  cnt_en                        
+  Row   4:    ***0***  (int_count == 127)_1  cnt_en                        
+
+----------------Focused Condition View-------------------
+Line       429 Item    1  (int_count_temp >= 1'b0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                Input Term   Covered  Reason for no coverage   Hint
+               -----------  --------  -----------------------  --------------
+  (int_count_temp >= 1'b0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                  Non-masking condition(s)      
+ ---------  ---------  --------------------        -------------------------     
+  Row   1:    ***0***  (int_count_temp >= 1'b0)_0  -                             
+  Row   2:    ***0***  (int_count_temp >= 1'b0)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       439 Item    1  (cnt_en && (int_count == 255))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+          Input Term   Covered  Reason for no coverage   Hint
+         -----------  --------  -----------------------  --------------
+              cnt_en         N  No hits                  Hit '_0' and '_1'
+  (int_count == 255)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  cnt_en_0              -                             
+  Row   2:    ***0***  cnt_en_1              (int_count == 255)            
+  Row   3:    ***0***  (int_count == 255)_0  cnt_en                        
+  Row   4:    ***0***  (int_count == 255)_1  cnt_en                        
+
+----------------Focused Condition View-------------------
+Line       482 Item    1  (div_en ~| timer_en)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+      div_en         N  No hits                  Hit '_0' and '_1'
+    timer_en         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  div_en_0              ~timer_en                     
+  Row   2:    ***0***  div_en_1              ~timer_en                     
+  Row   3:    ***0***  timer_en_0            ~div_en                       
+  Row   4:    ***0***  timer_en_1            ~div_en                       
+
+----------------Focused Condition View-------------------
+Line       489 Item    1  (count == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (count == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (count == 0)_0        -                             
+  Row   2:    ***0***  (count == 0)_1        -                             
+
+----------------Focused Condition View-------------------
+Line       499 Item    1  (~div_en && timer_en)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+      div_en         N  No hits                  Hit '_0' and '_1'
+    timer_en         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  div_en_0              timer_en                      
+  Row   2:    ***0***  div_en_1              -                             
+  Row   3:    ***0***  timer_en_0            ~div_en                       
+  Row   4:    ***0***  timer_en_1            ~div_en                       
+
+----------------Focused Condition View-------------------
+Line       506 Item    1  (count != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (count != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (count != 0)_0        -                             
+  Row   2:    ***0***  (count != 0)_1        -                             
+
+----------------Focused Condition View-------------------
+Line       516 Item    1  (div_en && ~timer_en)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+      div_en         N  No hits                  Hit '_0' and '_1'
+    timer_en         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  div_en_0              -                             
+  Row   2:    ***0***  div_en_1              ~timer_en                     
+  Row   3:    ***0***  timer_en_0            div_en                        
+  Row   4:    ***0***  timer_en_1            div_en                        
+
+----------------Focused Condition View-------------------
+Line       523 Item    1  (count == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (count == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (count == 0)_0        -                             
+  Row   2:    ***0***  (count == 0)_1        -                             
+
+----------------Focused Condition View-------------------
+Line       533 Item    1  (div_en && timer_en)
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage   Hint
+ -----------  --------  -----------------------  --------------
+      div_en         N  No hits                  Hit '_0' and '_1'
+    timer_en         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  div_en_0              -                             
+  Row   2:    ***0***  div_en_1              timer_en                      
+  Row   3:    ***0***  timer_en_0            div_en                        
+  Row   4:    ***0***  timer_en_1            div_en                        
+
+----------------Focused Condition View-------------------
+Line       540 Item    1  (count != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (count != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (count != 0)_0        -                             
+  Row   2:    ***0***  (count != 0)_1        -                             
+
+----------------Focused Condition View-------------------
+Line       587 Item    1  (count != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (count != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (count != 0)_0        -                             
+  Row   2:    ***0***  (count != 0)_1        -                             
+
+----------------Focused Condition View-------------------
+Line       614 Item    1  (count_now != count_later)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                  Input Term   Covered  Reason for no coverage   Hint
+                 -----------  --------  -----------------------  --------------
+  (count_now != count_later)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                    Non-masking condition(s)      
+ ---------  ---------  --------------------          -------------------------     
+  Row   1:    ***0***  (count_now != count_later)_0  -                             
+  Row   2:    ***0***  (count_now != count_later)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       642 Item    1  (count_now == count_later)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                  Input Term   Covered  Reason for no coverage   Hint
+                 -----------  --------  -----------------------  --------------
+  (count_now == count_later)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                    Non-masking condition(s)      
+ ---------  ---------  --------------------          -------------------------     
+  Row   1:    ***0***  (count_now == count_later)_0  -                             
+  Row   2:    ***0***  (count_now == count_later)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       672 Item    1  (count_now == count_later)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                  Input Term   Covered  Reason for no coverage   Hint
+                 -----------  --------  -----------------------  --------------
+  (count_now == count_later)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                    Non-masking condition(s)      
+ ---------  ---------  --------------------          -------------------------     
+  Row   1:    ***0***  (count_now == count_later)_0  -                             
+  Row   2:    ***0***  (count_now == count_later)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       691 Item    1  (count == 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+    Input Term   Covered  Reason for no coverage   Hint
+   -----------  --------  -----------------------  --------------
+  (count == 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (count == 0)_0        -                             
+  Row   2:    ***0***  (count == 0)_1        -                             
+
+----------------Focused Condition View-------------------
+Line       819 Item    1  ((tim_rdata == 1) && (tim_paddr == 24))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+   (tim_rdata == 1)         N  No hits                  Hit '_0' and '_1'
+  (tim_paddr == 24)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == 1)_0    -                             
+  Row   2:    ***0***  (tim_rdata == 1)_1    (tim_paddr == 24)             
+  Row   3:    ***0***  (tim_paddr == 24)_0   (tim_rdata == 1)              
+  Row   4:    ***0***  (tim_paddr == 24)_1   (tim_rdata == 1)              
+
+----------------Focused Condition View-------------------
+Line       842 Item    1  ((tim_rdata == 1) && (tim_paddr == 24))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+   (tim_rdata == 1)         N  No hits                  Hit '_0' and '_1'
+  (tim_paddr == 24)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == 1)_0    -                             
+  Row   2:    ***0***  (tim_rdata == 1)_1    (tim_paddr == 24)             
+  Row   3:    ***0***  (tim_paddr == 24)_0   (tim_rdata == 1)              
+  Row   4:    ***0***  (tim_paddr == 24)_1   (tim_rdata == 1)              
+
+----------------Focused Condition View-------------------
+Line       865 Item    1  ((tim_rdata == 0) && (tim_paddr == 24))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+   (tim_rdata == 0)         N  No hits                  Hit '_0' and '_1'
+  (tim_paddr == 24)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == 0)_0    -                             
+  Row   2:    ***0***  (tim_rdata == 0)_1    (tim_paddr == 24)             
+  Row   3:    ***0***  (tim_paddr == 24)_0   (tim_rdata == 0)              
+  Row   4:    ***0***  (tim_paddr == 24)_1   (tim_rdata == 0)              
+
+----------------Focused Condition View-------------------
+Line       889 Item    1  ((tim_rdata == 0) && (tim_paddr == 24))
+Condition totals: 0 of 2 input terms covered = 0.00%
+
+         Input Term   Covered  Reason for no coverage   Hint
+        -----------  --------  -----------------------  --------------
+   (tim_rdata == 0)         N  No hits                  Hit '_0' and '_1'
+  (tim_paddr == 24)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tim_rdata == 0)_0    -                             
+  Row   2:    ***0***  (tim_rdata == 0)_1    (tim_paddr == 24)             
+  Row   3:    ***0***  (tim_paddr == 24)_0   (tim_rdata == 0)              
+  Row   4:    ***0***  (tim_paddr == 24)_1   (tim_rdata == 0)              
+
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     453        47       406    10.37%
+
+================================Statement Details================================
+
+Statement Coverage for instance /test_bench --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ../tb/test_bench.v
+    105             1     	  $display("\n=================================================================================");
+    106             1     	  $display("=======================[ REGISTER INITIAL VALUE CHECK  ]=========================");
+    107             1     	  $display("=================================================================================\n");
+    110             1     	  @(posedge sys_clk)
+    111             1     	  APB_Enable(~pwrite,paddr,psel,penable,wdata);
+    113             1     	  @(posedge sys_clk)
+    114             1     	  tim_penable = ~penable;
+    116             1              #60;  
+    119             1     			      $display("========================[ TEST: TDR0 CHECK (0x00) ]=======================\n");
+    122             1     		                      $display(" t = %10d   [PASS]:  tim_rdata = 32'h%h                                       ",$time,tim_rdata);
+    124             1     			              $display(" t = %10d   [FAIL]:  tim_rdata = 32'h%h. EXPECTED: tim_rdata = 32'h00000100   ",$time,tim_rdata);
+    127             1     			      $display("==========================[ TEST: TDR0 (0x04) ]============================\n");
+    130             1     		                      $display(" t = %10d   [PASS]:  tim_rdata = 32'h%h                                       ",$time,tim_rdata);
+    132             1     			              $display(" t = %10d   [FAIL]:  tim_rdata = 32'h%h. EXPECTED: tim_rdata = 32'h00000000   ",$time,tim_rdata);
+    135             1     			      $display("===========================[ TEST: TDR1 (0x04) ]===========================\n");
+    137             1     		                      $display(" t = %10d   [PASS]:  tim_rdata = 32'h%h                                       ",$time,tim_rdata);
+    139             1     			              $display(" t = %10d   [FAIL]:  tim_rdata = 32'h%h. EXPECTED: tim_rdata = 32'h00000000   ",$time,tim_rdata);
+    142             1     			      $display("===========================[ TEST: TCMP0 (0x1C) ]===========================\n");
+    144             1     		                      $display(" t = %10d   [PASS]:  tim_rdata = 32'h%h                                       ",$time,tim_rdata);
+    146             1     			              $display(" t = %10d   [FAIL]:  tim_rdata = 32'h%h. EXPECTED: tim_rdata = 32'hffffffff   ",$time,tim_rdata);
+    149             1     			      $display("===========================[ TEST: TCMP1 (0x10) ]===========================\n");
+    151             1     		                      $display(" t = %10d   [PASS]:  tim_rdata = 32'h%h                                       ",$time,tim_rdata);
+    153             1     			              $display(" t = %10d   [FAIL]:  tim_rdata = 32'h%h. EXPECTED: tim_rdata = 32'hffffffff   ",$time,tim_rdata);
+    156             1     			      $display("===========================[ TEST: TIER (0x14) ]============================\n");
+    158             1     		                      $display(" t = %10d   [PASS]:  tim_rdata = 32'h%h                                       ",$time,tim_rdata);
+    160             1     			              $display(" t = %10d   [FAIL]:  tim_rdata = 32'h%h. EXPECTED: tim_rdata = 32'h00000000   ",$time,tim_rdata);
+    163             1     			      $display("===========================[ TEST: TISR (0x18) ]===========================\n");
+    165             1     		                      $display(" t = %10d   [PASS]:  tim_rdata = 32'h%h                                       ",$time,tim_rdata);
+    167             1     			              $display(" t = %10d   [FAIL]:  tim_rdata = 32'h%h. EXPECTED: tim_rdata = 32'h00000000   ",$time,tim_rdata);
+    170             1     			      $display("===============================[ RESERVED ]================================\n");
+    172             1     		                      $display(" t = %10d   [PASS]:  tim_rdata = 32'h%h                                       ",$time,tim_rdata);
+    174             1     			              $display(" t = %10d   [FAIL]:  tim_rdata = 32'h%h. EXPECTED: tim_rdata = 32'h00000000   ",$time,tim_rdata);
+    178             1              sys_rst_n = 1'b0;
+    179             1     	 #100;  
+    188             1     	  $display("\n=====================================================================");
+    189             1     	  $display("==================[ REGISTER READ/WRITE CHECK ]======================");
+    190             1     	  $display("=====================================================================\n");
+    192             1     	  $display("==================[ TEST: WRITE REGISTER CHECK ]=====================\n");
+    196             1     	  @(posedge sys_clk)
+    197             1     	  APB_Enable(pwrite,paddr,psel,penable,wdata);
+    199             1     	  #10; 
+    201             1     		  $display(" t = %10d   [PASS]     :  w_en = %b                                                  ",$time,uut.r_inst.w_en);
+    202             1     		  #60;
+    203             1     		  $display(" t = %10d   [PASS]     :  tim_wdata = 32'h%h at paddr 12'h%h                 ",$time,tim_wdata,tim_paddr);
+    206             1     		  $display(" t = %10d   [FAIL]     :  w_en = %b  , tim_wdata = 32'h%h at paddr 12'h%h     ",$time,uut.r_inst.w_en,tim_wdata,tim_paddr);
+    207             1     		  $display(" t = %10d   [EXPECTED] :  w_en = 1  , can not write data => timing error            ",$time);
+    210             1     	  @(posedge sys_clk)
+    211             1     	  tim_penable = ~penable;
+    212             1     	  $display("\n==================[ TEST: READ REGISTER CHECK ]=====================\n");
+    213             1     	  @(posedge sys_clk)
+    214             1               APB_Enable(~pwrite,paddr,psel,penable,wdata);
+    216             1     	  @(posedge sys_clk)
+    217             1     	  tim_penable = ~penable;
+    220             1     		  $display(" t = %10d   [PASS]     :  r_en = %b                                                  ",$time,uut.r_inst.r_en);
+    221             1     		  #60;
+    222             1     		  $display(" t = %10d   [PASS]     :  tim_rdata = 32'h%h at paddr 12'h%h                 ",$time,tim_rdata,tim_paddr);
+    225             1     		  $display(" t = %10d   [FAIL]     :  r_en = %b  , tim_rdata = 32'h%h at paddr 12'h%h     ",$time,uut.r_inst.w_en,tim_rdata,tim_paddr);
+    226             1     		  #60;
+    227             1     		  $display(" t = %10d   [EXPECTED] :  r_en = 1  , can not read data => timing error             ",$time);
+    229             1     	  #100; 
+    240             1     	  $display("\n================================================================================");
+    241             1     	  $display("======================[  COUNTER CONTROL DIV_VALUE CHECK ]======================");
+    242             1     	  $display("================================================================================\n");
+    245             1     	  @(posedge sys_clk)
+    246             1     	  APB_Enable(pwrite,paddr,psel,penable,wdata);
+    248             1     	  @(posedge sys_clk)
+    249             1     	  tim_penable = ~penable;
+    251             1     	  #10;
+    253             1     	    $display(" t = %10d   [PASS]     : div_en = %b , timer_en = %b                                  ",$time,uut.cd_inst.div_en,uut.cd_inst.timer_en);
+    256             1                 $display(" t = %10d   [FAIL]     : div_en = %b  , timer_en = %b                                 ",$time,uut.cd_inst.div_en,uut.cd_inst.timer_en);
+    257             1     	    $display(" t = %10d   [EXPECTED] : div_en = 1  , timer_en = 1                                 ",$time); 
+    260             1     	  #60;
+    263             1          			     $display("\n====================[ TEST: COUTING SPEED IS NOT DIVIDED ]===================\n");
+    265             1     			     #100;
+    267             1     			             wait (uut.cd_inst.int_count == uut.cd_inst.int_count_max);
+    268             1     		                     $display(" t = %10d   [PASS]     : Waiting for cnt_en is asserted                             ",$time);
+    271             1     				     $display(" t = %10d   [FAIL]     : Test bench could run forever                              ",$time);
+    274             1     			     #10;
+    276             1     				     $display(" t = %10d   [PASS]     : cnt_en = %b  at count = 8'b%b                         ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    278             1     				     $display(" t = %10d   [FAIL]     : cnt_en = %b  at count = 8'b%b                         ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    279             1     				     $display(" t = %10d   [EXPECTED] : cnt_en = 1  at count = 8'b00000000                         ",$time);
+    284             1     			     $display("\n====================[ TEST: COUTING SPEED IS NOT DIVIDED BY 2]===============\n");
+    286             1     			     #100;
+    288             1     			             wait (uut.cd_inst.int_count == uut.cd_inst.int_count_max);
+    289             1     		                     $display(" t = %10d   [PASS]     : Waiting for cnt_en is asserted                             ",$time);
+    292             1     				     $display(" t = %10d   [FAIL]     : Test bench could run forever                               ",$time);
+    295             1     			     #10;
+    297             1     				     $display(" t = %10d   [PASS]     : cnt_en = %b  at count = 8'b%b                         ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    299             1     				     $display(" t = %10d   [FAIL]     : cnt_en = %b    at count = 8'b%b                       ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    300             1     				     $display(" t = %10d   [EXPECTED] : cnt_en = 1    at count = 8'b00000001                       ",$time);
+    305             1          			     $display("\n===============[ TEST: COUTING SPEED IS NOT DIVIDED BY 4]=====================\n");
+    307             1     			     #100;
+    309             1     			             wait (uut.cd_inst.int_count == uut.cd_inst.int_count_max);
+    310             1     		                     $display(" t = %10d   [PASS]     : Waiting for cnt_en is asserted                             ",$time);
+    313             1     				     $display(" t = %10d   [FAIL]     : Test bench could run forever                               ",$time);
+    316             1     			     #10;
+    318             1     				     $display(" t = %10d   [PASS]     : cnt_en = %b  at count = %b                            ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    320             1     				     $display(" t = %10d   [FAIL]     : cnt_en = %b    at count = 8'b%b                       ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    321             1     				     $display(" t = %10d   [EXPECTED] : cnt_en = 1    at count = 8'b00000011                       ",$time);
+    326             1          			     $display("\n=================[ TEST: COUTING SPEED IS NOT DIVIDED BY 8]====================\n");
+    328             1     			     #100;
+    330             1     			             wait (uut.cd_inst.int_count == uut.cd_inst.int_count_max);
+    331             1     		                     $display(" t = %10d   [PASS]     : Waiting for cnt_en is asserted                             ",$time);
+    334             1     				     $display(" t = %10d   [FAIL]     : Test bench could run forever                               ",$time);
+    337             1     			     #10;
+    339             1     				     $display(" t = %10d   [PASS]     : cnt_en = %b  at count = %b                            ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    341             1     				     $display(" t = %10d   [FAIL]     : cnt_en = %b    at count = 8'b%b                       ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    342             1     				     $display(" t = %10d   [EXPECTED] : cnt_en = 1    at count = 8'b00000111                       ",$time);
+    347             1          			     $display("\n===================[ TEST: COUTING SPEED IS NOT DIVIDED BY 16]=================\n");
+    349             1     			     #100;
+    351             1     			             wait (uut.cd_inst.int_count == uut.cd_inst.int_count_max);
+    352             1     		                     $display(" t = %10d   [PASS]     : Waiting for cnt_en is asserted                             ",$time);
+    355             1     				     $display(" t = %10d   [FAIL]     : Test bench could run forever                               ",$time);
+    358             1     			     #10;
+    360             1     				     $display(" t = %10d   [PASS]     : cnt_en = %b  at count = %b                            ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    362             1     				     $display(" t = %10d   [FAIL]     : cnt_en = %b    at count = 8'b%b                       ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    363             1     				     $display(" t = %10d   [EXPECTED] : cnt_en = 1    at count = 8'b00001111                       ",$time);
+    368             1          			     $display("\n====================[ TEST: COUTING SPEED IS NOT DIVIDED BY 32]=================\n");
+    370             1     			     #100;
+    372             1     			             wait (uut.cd_inst.int_count == uut.cd_inst.int_count_max);
+    373             1     		                     $display(" t = %10d   [PASS]     : Waiting for cnt_en is asserted                             ",$time);
+    376             1     				     $display(" t = %10d   [FAIL]     : Test bench could run forever                               ",$time);
+    378             1     			     #10;
+    380             1     				     $display(" t = %10d   [PASS]     : cnt_en = %b  at count = %b                            ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    382             1     				     $display(" t = %10d   [FAIL]     : cnt_en = %b    at count = 8'b%b                       ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    383             1     				     $display(" t = %10d   [EXPECTED] : cnt_en = 1    at count = 8'b00011111                       ",$time);
+    387             1          			     $display("\n==================[ TEST: COUTING SPEED IS NOT DIVIDED BY 64]===================\n");
+    389             1     			     #100;
+    391             1     			             wait (uut.cd_inst.int_count == uut.cd_inst.int_count_max);
+    392             1     		                     $display(" t = %10d   [PASS]     : Waiting for cnt_en is asserted                             ",$time);
+    395             1     				     $display(" t = %10d   [FAIL]     : Test bench could run forever                               ",$time);
+    398             1     			     #10;
+    400             1     				     $display(" t = %10d   [PASS]     : cnt_en = %b  at count = %b                            ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    402             1     				     $display(" t = %10d   [FAIL]     : cnt_en = %b    at count = 8'b%b                       ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    403             1     				     $display(" t = %10d   [EXPECTED] : cnt_en = 1    at count = 8'b00111111                       ",$time);
+    407             1          			     $display("\n==================[ TEST: COUTING SPEED IS NOT DIVIDED BY 128=]=================\n");
+    409             1     			     #100;
+    411             1     			             wait (uut.cd_inst.int_count == uut.cd_inst.int_count_max);
+    412             1     		                     $display(" t = %10d   [PASS]     : Waiting for cnt_en is asserted                             ",$time);
+    415             1     				     $display(" t = %10d   [FAIL]     : Test bench could run forever                               ",$time);
+    417             1     			     #10;
+    419             1     				     $display(" t = %10d   [PASS]     : cnt_en = %b  at count = %b                            ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    421             1     				     $display(" t = %10d   [FAIL]     : cnt_en = %b    at count = 8'b%b                       ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    422             1     				     $display(" t = %10d   [EXPECTED] : cnt_en = 1    at count = 8'b01111111                       ",$time);
+    426             1          			     $display("\n===================[ TEST: COUTING SPEED IS NOT DIVIDED BY 256]=================\n");
+    428             1     			     #100;
+    430             1     			             wait (uut.cd_inst.int_count == uut.cd_inst.int_count_max);
+    431             1     		                     $display(" t = %10d   [PASS]     : Waiting for cnt_en is asserted                             ",$time);
+    434             1     				     $display(" t = %10d   [FAIL]     : cnt_en = %b    at count = 8'b%b                       ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    435             1     				     $display(" t = %10d   [EXPECTED] : cnt_en = 1    at count = 8'b11111111                       ",$time);
+    438             1     			     #10;
+    440             1     				     $display(" t = %10d   [PASS]     : cnt_en = %b  at count = %b                            ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    442             1     				     $display(" t = %10d   [FAIL]     : cnt_en = %b   at count = %b                           ",$time,uut.cd_inst.cnt_en,uut.cd_inst.int_count);
+    443             1     				     $display(" t = %10d   [EXPECTED] : cnt_en = 1   at count = 2                                  ",$time);
+    447             1     		  $display("\n============================================================================================");
+    448             1       		  $display("======================[ TEST: COUNTING SPEED IS IN PROHIBIT SETTINGS ]======================");
+    449             1     		  $display("============================================================================================");
+    450             1     		  $display("===========[ When setting prohibit value, div_val is remained the previous state ]==========");
+    451             1     		  $display("============================================================================================\n");
+    464             1     	  $display("\n===============================================================================================");
+    465             1       	  $display("======================[  COUNTER CONTROL DIV_EN && TIMER_EN CHECK  ]===========================");
+    466             1     	  $display("===============================================================================================\n");
+    468             1     	  @(posedge sys_clk)
+    469             1     	  APB_Enable(pwrite,paddr,psel,penable,wdata);
+    471             1     	  @(posedge sys_clk)
+    472             1     	  tim_penable = ~penable;
+    474             1     	  @(posedge sys_clk)
+    475             1               APB_Enable(~pwrite,paddr,psel,penable,wdata);
+    477             1     	  @(posedge sys_clk)
+    478             1     	  tim_penable = ~penable;
+    480             1     	  #60;
+    481             1     	  $display(" t = %10d:    rdata = 32'h%h at paddr 12'h%h                                                      ",$time,tim_rdata,tim_paddr);
+    483             1                     $display(" t = %10d:    div_en = %b , timer_en = %b                                                                   ",$time,uut.cd_inst.div_en,uut.cd_inst.timer_en);
+    484             1     		$display(" t = %10d:    div_en   is disabled. Counter counts with normal speed based on system clock               ",$time);
+    485             1     		$display(" t = %10d:    timer_en is disabled. Counter does not count                                               ",$time);
+    486             1     	        repeat (10) @(posedge sys_clk) begin
+    486             2     
+    488             1     		#10;
+    490             1     		       $display(" t = %10d:    [PASS]     : cnt_en based on system clock                                                  ",$time);
+    491             1     		       $display(" t = %10d:    [PASS]     : count  = 64'b%b ",$time,uut.c_inst.count);
+    494             1     		       $display(" t = %10d:    [FAIL]     : cnt_en based on system clock                                                  ",$time);
+    495             1     		       $display(" t = %10d:    [FAIL]     : count  = 64'b%b ",$time,uut.c_inst.count);
+    496             1     		       $display(" t = %10d:    [EXPECTED] : count  = 64'b0000000000000000000000000000000000000000000000000000000000000000 ",$time);
+    500             1     		$display(" t = %10d:    div_en = %b , time r_en = %b                                                                  ",$time,uut.cd_inst.div_en,uut.cd_inst.timer_en);
+    501             1     		$display(" t = %10d:    div_en   is disabled. Counter counts with normal speed based on system clock               ",$time);
+    502             1     		$display(" t = %10d:    timer_en is enabled . Counter starts counting                                              ",$time);
+    503             1     	        repeat (10) @(posedge sys_clk) begin
+    503             2     
+    505             1     		#10;
+    507             1     		       $display(" t = %10d:    [PASS]     : cnt_en based on system clock                                                  ",$time);
+    508             1     		       $display(" t = %10d:    [PASS]     : count  = 64'b%b ",$time,uut.c_inst.count);
+    511             1     		       $display(" t = %10d:    [FAIL]     : cnt_en based on system clock                                                  ",$time);
+    512             1     		       $display(" t = %10d:    [FAIL]     : count  = 64'b0000000000000000000000000000000000000000000000000000000000000000 ",$time);
+    513             1     		       $display(" t = %10d:    [EXPECTED] : count  = 64'b%b ",$time,uut.c_inst.count);
+    517             1     		$display(" t = %10d:    div_en = %b , timer_en = %b                                                                  ",$time,uut.cd_inst.div_en,uut.cd_inst.timer_en);
+    518             1     		$display(" t = %10d:    div_en   is enabled . The counting speed of counter is controlled based on div_val         ",$time);
+    519             1     		$display(" t = %10d:    timer_en is disabled. Counter does not count                                               ",$time);
+    520             1     	        repeat (10) @(posedge sys_clk) begin
+    520             2     
+    522             1     		#10;
+    524             1     		       $display(" t = %10d:    [PASS]     : cnt_en based on div_val                                                       ",$time);
+    525             1     		       $display(" t = %10d:    [PASS]     : count  = 64'b%b ",$time,uut.c_inst.count);
+    528             1     		       $display(" t = %10d:    [FAIL]     : cnt_en based on div_val                                                       ",$time);
+    529             1     		       $display(" t = %10d:    [FAIL]     : count  = 64'b0000000000000000000000000000000000000000000000000000000000000000 ",$time);
+    530             1     		       $display(" t = %10d:    [EXPECTED] : count  = 64'b%b ",$time,uut.c_inst.count);
+    534             1     		$display(" t = %10d:    div_en = %b , timer_en = %b                                                                  ",$time,uut.cd_inst.div_en,uut.cd_inst.timer_en);
+    535             1     		$display(" t = %10d:    div_en   is enabled. The counting speed of counter is controlled based on div_val          ",$time);
+    536             1                     $display(" t = %10d:    timer_en is enabled. Counter starts counting                                               ",$time);		
+    537             1     	        repeat (10) @(posedge sys_clk) begin
+    537             2     
+    539             1     		#10;
+    541             1     		       $display(" t = %10d:    [PASS]     : cnt_en based on div_val                                                       ",$time);
+    542             1     		       $display(" t = %10d:    [PASS]     : count  = 64'b%b  ",$time,uut.c_inst.count);
+    545             1     		       $display(" t = %10d:    [FAIL]     : cnt_en based on div_val                                                       ",$time);
+    546             1     		       $display(" t = %10d:    [FAIL]     : count  = 64'b0000000000000000000000000000000000000000000000000000000000000000 ",$time);
+    547             1     		       $display(" t = %10d:    [EXPECTED] : count  = 64'b%b ",$time,uut.c_inst.count);
+    551             1     		$display(" t = %10d:    [FAIL]   :    div_en && timer_en could not be 1'bx                                         ",$time);
+    554             1               @(posedge sys_clk)
+    555             1     	  sys_rst_n = 1'b0;
+    556             1     	  #100;
+    569             1        	  $display("\n============================================================================================");
+    570             1       	  $display("====================================[ COUNTER 64BIT CHECK ]=================================");
+    571             1     	  $display("============================================================================================");
+    573             1               @(posedge sys_clk)
+    574             1     	  APB_Enable(pwrite,paddr,psel,penable,wdata);
+    576             1     	  @(posedge sys_clk)
+    577             1     	  tim_penable = ~penable;
+    580             1     	  #60;
+    581             1               $display(" t = %10d:    div_val = 4'b%b  ,  count_clr = 1'b%b  ,  div_en  = 1'b%b  ,  timer_en = 1'b%b              ",$time,uut.r_inst.div_val,uut.r_inst.count_clr,uut.r_inst.div_en,uut.r_inst.timer_en);
+    584             1     	  repeat (uut.cd_inst.int_count_max) @(posedge sys_clk) begin
+    584             2     
+    586             1     	  #100;
+    588             1     	        $display(" t = %10d:    [PASS]    : count  =  64'b%b ",$time,uut.c_inst.count);
+    591             1     	        $display(" t = %10d:    [FAIL]    : count  =  64'b%b ",$time,uut.c_inst.count);
+    592             1     	        $display(" t = %10d:    [EXPECTED]: counter is counting. Count value must be more than 64'b0                       ",$time);
+    594             1               #100;
+    595             1     	  @(posedge sys_clk)
+    596             1     	  APB_Enable(pwrite,paddr,psel,penable,{wdata[31:4] , wdata1});
+    598             1     	  @(posedge sys_clk)
+    599             1     	  tim_penable = ~penable;
+    601             1     	  #60;
+    602             1       	  $display("\n==================================[ TEST: TURNED OFF DIV_EN ]==================================\n");
+    603             1     	  $display(" t = %10d:    div_val = 4'b%b  ,  count_clr = 1'b%b  ,  div_en  = 1'b%b  ,  timer_en = 1'b%b              ",$time,uut.r_inst.div_val,uut.r_inst.count_clr,uut.r_inst.div_en,uut.r_inst.timer_en);
+    605             1               @(posedge sys_clk)
+    606             1     	  count_now = uut.c_inst.count;
+    608             1     	  repeat (uut.cd_inst.int_count_max) @(posedge sys_clk) begin
+    608             2     
+    610             1     	  #20;
+    611             1               count_later = uut.c_inst.count;
+    613             1     	  #100;
+    615             1     	        $display(" t = %10d:    [PASS]    : count  =  64'b%b ",$time,uut.c_inst.count);
+    618             1     	        $display(" t = %10d:    [FAIL]    : count  =  64'b%b ",$time,uut.c_inst.count);
+    619             1     	        $display(" t = %10d:    [EXPECTED]: counter is counting. Count value must be more than 64'b0                       ",$time);
+    621             1               #100; 
+    622             1     	  @(posedge sys_clk)
+    623             1     	  APB_Enable(pwrite,paddr,psel,penable,{wdata[31:4] , wdata2});
+    625             1     	  @(posedge sys_clk)
+    626             1     	  tim_penable = ~penable;
+    628             1     	  #60;
+    629             1       	  $display("\n==================================[ TEST: TURNED OFF TIMER_EN  ]================================\n");
+    631             1     	  $display(" t = %10d:    div_val = 4'b%b  ,  count_clr = 1'b%b  ,  div_en  = 1'b%b  ,  timer_en = 1'b%b              ",$time,uut.r_inst.div_val,uut.r_inst.count_clr,uut.r_inst.div_en,uut.r_inst.timer_en);
+    633             1               @(posedge sys_clk)
+    634             1     	  count_now = uut.c_inst.count;
+    636             1     	  repeat (uut.cd_inst.int_count_max) @(posedge sys_clk) begin
+    636             2     
+    638             1     	  #20;
+    639             1               count_later = uut.c_inst.count;
+    641             1     	  #100;
+    643             1     	        $display(" t = %10d:    [PASS]    : count  =  64'b%b ",$time,uut.c_inst.count);
+    647             1     	        $display(" t = %10d:    [FAIL]    : count  =  64'b%b ",$time,uut.c_inst.count);
+    648             1     	        $display(" t = %10d:    [EXPECTED]: count  =  64'b0000000000000000000000000000000000000000000000000000000000000000 ",$time);
+    651             1               #100;
+    652             1     	  @(posedge sys_clk) 
+    653             1     	  APB_Enable(pwrite,paddr,psel,penable,{wdata[31:4] , wdata3});
+    655             1     	  @(posedge sys_clk)
+    656             1     	  tim_penable = ~penable;
+    658             1     	  #60;
+    659             1       	  $display("\n=========================[ TEST: TURNED OFF BOTH DIV_EN && TIMER_EN  ]==========================\n");
+    661             1     	  $display(" t = %10d:    div_val = 4'b%b  ,  count_clr = 1'b%b  ,  div_en  = 1'b%b  ,  timer_en = 1'b%b              ",$time,uut.r_inst.div_val,uut.r_inst.count_clr,uut.r_inst.div_en,uut.r_inst.timer_en);
+    663             1               @(posedge sys_clk)
+    664             1     	  count_now = uut.c_inst.count;
+    666             1     	  repeat (uut.cd_inst.int_count_max) @(posedge sys_clk) begin
+    666             2     
+    668             1     	  #20;
+    669             1               count_later = uut.c_inst.count;
+    671             1     	  #100;
+    673             1     	        $display(" t = %10d:    [PASS]    : count  =  64'b%b ",$time,uut.c_inst.count);
+    676             1     	        $display(" t = %10d:    [FAIL]    : count  =  64'b%b ",$time,uut.c_inst.count);
+    677             1     	        $display(" t = %10d:    [EXPECTED]: count  =  64'b0000000000000000000000000000000000000000000000000000000000000000 ",$time);
+    680             1     	  #100;
+    681             1     	  @(posedge sys_clk)
+    682             1     	  APB_Enable(pwrite,paddr,psel,penable,{wdata[31:4] , wdata4});
+    684             1     	  @(posedge sys_clk)
+    685             1     	  tim_penable = ~penable;
+    686             1       	  $display("\n=================================[ TEST: TURNED OFF COUNT_CLR  ]================================\n");
+    688             1     	  $display(" t = %10d:    div_val = 4'b%b  ,  count_clr = 1'b%b  ,  div_en  = 1'b%b  ,  timer_en = 1'b%b              ",$time,uut.r_inst.div_val,uut.r_inst.count_clr,uut.r_inst.div_en,uut.r_inst.timer_en);
+    690             1     	  #100;
+    692             1     	        $display(" t = %10d:    [PASS]    : count  =  64'b%b ",$time,uut.c_inst.count);
+    696             1     	        $display(" t = %10d:    [FAIL]    : count  =  64'b%b ",$time,uut.c_inst.count);
+    697             1     	        $display(" t = %10d:    [EXPECTED]: count  =  64'b0000000000000000000000000000000000000000000000000000000000000000 ",$time,uut.c_inst.count);
+    701             1     	  @(posedge sys_clk)
+    702             1     	  APB_Enable(pwrite,paddr,psel,penable,wdata);
+    704             1     	  @(posedge sys_clk)
+    705             1     	  tim_penable = ~penable;
+    706             1     	  $display("count = %b",uut.c_inst.count); 
+    726             1               $display("\n=============================================================================================");
+    727             1       	  $display("===================================[ INTERRUPT CHECK  ]======================================");
+    728             1     	  $display("=============================================================================================\n");
+    731             1     	  @(posedge sys_clk) 
+    732             1     	  APB_Enable(pwrite,paddr,psel,penable,wdata); 
+    734             1     	  @(posedge sys_clk)
+    735             1     	  tim_penable = ~penable;
+    737             1     	  @(posedge sys_clk) 
+    738             1     	  APB_Enable(~pwrite,paddr,psel,penable,wdata); 
+    740             1     	  @(posedge sys_clk)
+    741             1     	  tim_penable = ~penable;
+    743             1     	  #60;
+    744             1       	  $display("\n=================================[ TEST: READ REGISTER TIER  (0x14)]=======================\n");
+    746             1     	  $display(" t = %10d:    tim_rdata  =  32'h%h at paddr = 12'h%h                                              ",$time,tim_rdata,tim_paddr);
+    747             1     	  @(posedge sys_clk)
+    748             1     	  APB_Enable(pwrite,paddr0,psel,penable,wdata0); 
+    750             1     	  @(posedge sys_clk)
+    751             1     	  tim_penable = ~penable;
+    753             1     	  @(posedge sys_clk)
+    754             1     	  APB_Enable(~pwrite,paddr0,psel,penable,wdata0); 
+    756             1     	  @(posedge sys_clk)
+    757             1     	  tim_penable = ~penable;
+    758             1     	  #60;
+    759             1       	  $display("\n================================[ TEST: READ REGISTER TCMP0 (0x0C)]=========================\n");
+    761             1     	  $display(" t = %10d:    tim_rdata  =  32'h%h at paddr = 12'h%h                                              ",$time,tim_rdata,tim_paddr);
+    763             1     	  @(posedge sys_clk)
+    764             1     	  APB_Enable(pwrite,paddr1,psel,penable,wdata1); 
+    767             1     	  @(posedge sys_clk)
+    768             1     	  tim_penable = ~penable;
+    770             1     	  @(posedge sys_clk)
+    771             1     	  APB_Enable(~pwrite,paddr1,psel,penable,wdata1);
+    773             1     	  @(posedge sys_clk)
+    774             1     	  tim_penable = ~penable;
+    776             1     	  #60;
+    777             1       	  $display("\n===============================[ TEST: READ REGISTER TCMP1 (0x10) ]==========================\n");
+    779             1     	  $display(" t = %10d:    tim_rdata  =  32'h%h at paddr = 12'h%h                                              ",$time,tim_rdata,tim_paddr);
+    781             1     	  @(posedge sys_clk)
+    782             1     	  APB_Enable(pwrite,paddr2,psel,penable,wdata2); 
+    784             1     	  @(posedge sys_clk)
+    785             1     	  tim_penable = ~penable;
+    787             1     	  @(posedge sys_clk)
+    788             1     	  APB_Enable(~pwrite,paddr2,psel,penable,wdata2); 
+    790             1     	  @(posedge sys_clk)
+    791             1     	  tim_penable = ~penable;
+    793             1     	  #60;
+    794             1       	  $display("\n=============================[ TEST: READ REGISTER TCR  (0x00) ]=============================\n");
+    796             1     	  $display(" t = %10d:    tim_rdata  =  32'h%h at paddr = 12'h%h                                              ",$time,tim_rdata,tim_paddr);
+    798             1       	  $display("\n=================================[ TEST: TIM_INT CHECK ]=====================================\n");
+    800             1     	  wait(uut.i_inst.match);
+    801             1     	  #60;
+    803             1     		 $display(" t = %10d:    [PASS]     :  tim_int = 1'b1                                                               ",$time);
+    805             1     		 $display(" t = %10d:    [FAIL]     :  tim_int = 1'b%b                                                               ",$time,tim_int);
+    806             1     		 $display(" t = %10d:    [EXPECTED] :  tim_int = 1'b1                                                               ",$time);
+    810             1     	  @(posedge sys_clk)
+    811             1     	  APB_Enable(~pwrite,paddr3,psel,penable,int_dis); 
+    813             1     	  @(posedge sys_clk)
+    814             1     	  tim_penable = ~penable;
+    816             1     	  #60;
+    817             1       	  $display("\n=============================[ TEST: READ REGISTER TISR (0x18) ]=============================\n");
+    820             1                      $display(" t = %10d:    [PASS]     :  tim_rdata = 32'h%h at paddr = 12'h%h                                  ",$time,tim_rdata,tim_paddr);
+    823             1                      $display(" t = %10d:    [FAIL]     :  tim_rdata = 32'h%h at paddr = 12'h%h                                  ",$time,tim_rdata,tim_paddr);
+    824             1                      $display(" t = %10d:    [EXPECTED] :  tim_rdata = 32'h00000001 at paddr = 12'h18                                   ",$time);
+    827             1     	  @(posedge sys_clk)
+    828             1     	  APB_Enable(pwrite,paddr3,psel,penable,int_dis); 
+    830             1     	  @(posedge sys_clk)
+    831             1     	  tim_penable = ~penable;
+    833             1     	  @(posedge sys_clk)
+    834             1     	  APB_Enable(~pwrite,paddr3,psel,penable,int_dis); 
+    836             1     	  @(posedge sys_clk)
+    837             1     	  tim_penable = ~penable;
+    839             1     	  #60;
+    840             1       	  $display("\n==================[ TEST: READ REGISTER TISR (0x18) AFTER WRITING 0) ]=======================\n");
+    843             1                      $display(" t = %10d:    [PASS]     :  tim_rdata = 32'h%h at paddr = 12'h%h                                  ",$time,tim_rdata,tim_paddr);
+    846             1                      $display(" t = %10d:    [FAIL]     :  tim_rdata = 32'h%h at paddr = 12'h%h                                  ",$time,tim_rdata,tim_paddr);
+    847             1                      $display(" t = %10d:    [EXPECTED] :  tim_rdata = 32'h00000001 at paddr = 12'h18                                   ",$time);
+    850             1     	  @(posedge sys_clk)
+    851             1     	  APB_Enable(pwrite,paddr3,psel,penable,int_en); 
+    853             1     	  @(posedge sys_clk)
+    854             1     	  tim_penable = ~penable;
+    856             1     	  @(posedge sys_clk)
+    857             1     	  APB_Enable(~pwrite,paddr3,psel,penable,int_en); 
+    859             1     	  @(posedge sys_clk)
+    860             1     	  tim_penable = ~penable;
+    862             1     	  #60;
+    863             1       	  $display("\n==================[ TEST: READ REGISTER TISR  (0x18) AFTER WRITING 1 ]=======================\n");
+    866             1                      $display(" t = %10d:    [PASS]     :  tim_rdata = 32'h%h at paddr = 12'h%h                                  ",$time,tim_rdata,tim_paddr);
+    870             1                      $display(" t = %10d:    [FAIL]     :  tim_rdata = 32'h%h at paddr = 12'h%h                                  ",$time,tim_rdata,tim_paddr);
+    871             1                      $display(" t = %10d:    [EXPECTED] :  tim_rdata = 32'h00000001 at paddr = 12'h18                                   ",$time);
+    874             1     	  @(posedge sys_clk)
+    875             1     	  APB_Enable(pwrite,paddr3,psel,penable,int_en); 
+    877             1     	  @(posedge sys_clk)
+    878             1     	  tim_penable = ~penable;
+    880             1     	  @(posedge sys_clk)
+    881             1     	  APB_Enable(~pwrite,paddr3,psel,penable,int_en); 
+    883             1     	  @(posedge sys_clk)
+    884             1     	  tim_penable = ~penable;
+    886             1     	  #60;
+    887             1       	  $display("\n====================[ TEST: READ REGISTER TISR  (0x18) AFTER WRITING 1 ]======================\n");
+    890             1                      $display(" t = %10d:    [PASS]     :  tim_rdata = 32'h%h at paddr = 12'h%h                                  ",$time,tim_rdata,tim_paddr);
+    894             1                      $display(" t = %10d:    [FAIL]     :  tim_rdata = 32'h%h at paddr = 12'h%h                                  ",$time,tim_rdata,tim_paddr);
+    895             1                      $display(" t = %10d:    [EXPECTED] :  tim_rdata = 32'h00000001 at paddr = 12'h18                                   ",$time);
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        422        10       412     2.36%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /test_bench --
+
+                                              Node      1H->0L      0L->1H  "Coverage"
+                                              ---------------------------------------
+                                 count_later[0-63]           0           0        0.00 
+                                   count_now[0-63]           0           0        0.00 
+                                           sys_clk           5           5      100.00 
+                                         sys_rst_n           0           5       50.00 
+                                           tim_int           0           0        0.00 
+                                   tim_paddr[0-11]           0           0        0.00 
+                                       tim_penable           5           5      100.00 
+                                        tim_pready           5           5      100.00 
+                                          tim_psel           0           5       50.00 
+                                        tim_pwrite           5           5      100.00 
+                                   tim_rdata[0-31]           0           0        0.00 
+                                   tim_wdata[0-31]           0           0        0.00 
+
+Total Node Count     =        211 
+Toggled Node Count   =          4 
+Untoggled Node Count =        207 
+
+Toggle Coverage      =       2.36% (10 of 422 bins)
+
+
+Total Coverage By Instance (filtered view): 14.92%
+
