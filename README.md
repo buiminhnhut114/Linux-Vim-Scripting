@@ -1,142 +1,62 @@
-# 🧠 Linux-Vim-Scripting — Assignments
+Linux • Vim • Scripting – Assignment
+1️⃣ Create file list
+Create a file named list that contains all .v and .sv files of the Pulpissimo project.
 
-This repository contains four scripting exercises for Linux users, focusing on RTL file listing, list comparison, path replacement, and regression automation.
-
----
-
-## 📘 1. Generate a list of all `.v` and `.sv` files in **PULPissimo**
-
-### 🎯 Goal
-- Create a file (for example: `pulpissimo_files.list`) that contains **all** `.v` and `.sv` files inside the PULPissimo project directory.  
-- Each line should contain one file path (absolute or relative).  
-- No empty lines, no duplicates.
-
-### 📄 Expected Output
-pulpissimo_files.list
-
-markdown
-Copy code
-
----
-
-## ⚙️ 2. Write a script to compare two list files
-
-### 🎯 Goal
-- Compare two list files: `list_1` and `list_2`.
-- The script must output:
-  - Files **missing** in `list_2` (present in `list_1` but not in `list_2`)
-  - Files **extra** in `list_2` (present in `list_2` but not in `list_1`)
-  - The **number of missing and extra** files
-
-### 🧩 Example
-```text
+2️⃣ Compare two file lists
+Write a script that compares elements in two list files and outputs the number of files that are missing or extra.
+Example:
 list_1: aaa.v bbb.v ccc.v
 list_2: aaa.v bbb.v
-⇒ Result: list_2 is missing 1 file: ccc.v
-📥 Input
-list_1, list_2
 
-📤 Output
-missing_in_list2.txt
+Output:
+list_2 is missing 1 file: ccc.v
 
-extra_in_list2.txt
 
-Summary (printed on screen or written to compare_summary.txt)
-
-🔄 3. change_path — Replace paths inside a file
-🎯 Goal
-Create a script change_path (any scripting language) that takes three arguments:
-
-The target file name (e.g., file_A)
-
-The source path to be replaced (e.g., home/spi/rtl_src)
-
-The target path to replace with (e.g., home/spi/rtl_src_new)
-
-Replace all occurrences of the source path in the file with the target path.
-
-Preserve all other content in the file.
-
-🧩 Example
-bash
-Copy code
+3️⃣ Change path script
+Write a script named change_path that replaces a given path in a file with a new one.
+(You may use any scripting language.)
+Example:
 ./change_path.csh file_A home/spi/rtl_src home/spi/rtl_src_new
-This replaces every home/spi/rtl_src in file_A with home/spi/rtl_src_new.
 
-📥 Input
-file_A, source_path, target_path
+→ Replace all path declarations of home/spi/rtl_src in file_A with home/spi/rtl_src_new.
 
-📤 Output
-Updated file_A (optionally keep a backup .bak)
+4️⃣ Regression run script
+Write a script to run regression tests sequentially from a list and produce:
 
-🧪 4. Regression Runner Script
-🎯 Goal
-Automatically run multiple testcases listed in testlist and generate:
 
-Individual log files: TC1.log, TC2.log, ...
+Individual log files for each testcase
 
-A summary report: testlist.rpt
 
-⚙️ Requirements
-testlist contains testcase names, one per line (e.g., TC1, TC2, …).
+A summary report of all results
 
-The script runs each testcase sequentially.
 
-Each testcase’s result is written into its own log file.
+Example:
+testlist:
+TC1
+TC2
+TC3
+TC4
+TC5
 
-The report testlist.rpt summarizes the results as PASS, FAIL, or NA:
+After running:
+TC1.log
+TC2.log
+TC3.log
+TC4.log
+TC5.log
+testlist.rpt
 
-PASS / FAIL / NA is determined from each testcase’s log file.
+testlist.rpt format:
+TC1: PASS
+TC2: FAIL
+TC3: PASS
+TC4: NA
+TC5: PASS
+Report directory: <path to TC*.log files>
 
-NA means the testcase could not compile or could not run simulation.
 
-🧩 Example
-text
-Copy code
-testlist: TC1 TC2 TC3 TC4 TC5
+PASS / FAIL / NA are determined from each .log file.
+NA means the testcase could not be compiled or simulated.
 
-Generated output:
-  TC1.log
-  TC2.log
-  TC3.log
-  TC4.log
-  TC5.log
-  testlist.rpt
 
-Content of testlist.rpt:
-  TC1: PASS
-  TC2: FAIL
-  TC3: PASS
-  TC4: NA
-  TC5: PASS
-
-Report directory : <path to directory containing TC*.log>
-📥 Input
-testlist (path to the testcase list file)
-
-📤 Output
-Report directory (e.g., reports/) containing TC*.log and testlist.rpt
-
-🗂️ Suggested Directory Structure
-text
-Copy code
-Linux_Vim_Scripting/
-├─ B1/                      # Task 1: Generate .v/.sv list (PULPissimo)
-│  └─ pulpissimo_files.list
-├─ B2/                      # Task 2: Compare two lists
-│  ├─ list_1
-│  ├─ list_2
-│  └─ Outputs: missing_in_list2.txt, extra_in_list2.txt, compare_summary.txt
-├─ B3/                      # Task 3: change_path
-│  └─ change_path.*         # your implementation (.csh/.sh/.py/…)
-├─ B4/                      # Task 4: regression runner
-│  ├─ testlist
-│  └─ reports/              # contains TC*.log and testlist.rpt
-└─ README.md
-🤝 Collaboration
-Developed in collaboration and with support from
-@tedduy.
-
-📜 License
-MIT License
-(Or update according to your project policy.)
+Supported by: https://github.com/tedduy
