@@ -19,7 +19,6 @@ bbb.v
 
 🧾 Output
 list_2 is missing 1 file: ccc.v
-
 3️⃣ Change Path Script
 
 Write a script named change_path that replaces a given path in a file with a new one.
@@ -27,13 +26,10 @@ Write a script named change_path that replaces a given path in a file with a new
 
 📘 Example
 ./change_path.csh file_A home/spi/rtl_src home/spi/rtl_src_new
-
-
 ➡ Replace all path declarations of
 home/spi/rtl_src
 in file_A with
 home/spi/rtl_src_new.
-
 4️⃣ Regression Run Script
 
 Write a script to run regression tests sequentially from a list and produce:
@@ -67,10 +63,5 @@ TC4: NA
 TC5: PASS
 Report directory: <path to TC*.log files>
 
-
 PASS / FAIL / NA are determined from each .log file.
 NA means the testcase could not be compiled or simulated.
-
-✨ Supported by
-
-🔗 https://github.com/tedduy
